@@ -1,0 +1,124 @@
+/* HEADER */
+.pageHeader {
+  background: #2e2e2e;
+  padding: 120px 20px 60px;
+  text-align: center;
+}
+
+.pageHeader h1 {
+  color: #ff8a00;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 3fr 1.2fr;
+  gap: 40px;
+}
+
+/* ABOUT CARD */
+.aboutCard {
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.aboutCard p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  color: #333;
+}
+
+.aboutCard ul {
+  margin-top: 20px;
+  padding-left: 18px;
+}
+
+.aboutCard li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.box {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.box h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.box h3::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: #ff8a00;
+  display: block;
+  margin-top: 8px;
+}
+
+.box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.box li {
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form input,
+.form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.form button {
+  margin-top: 10px;
+  background: #ff8a00;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #e67800;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}

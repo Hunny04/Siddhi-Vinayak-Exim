@@ -1,0 +1,82 @@
+.wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Section title */
+.sectionTitle {
+  margin-bottom: 20px;
+}
+
+.sectionTitle h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.sectionTitle span {
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #ff8a00;
+  margin: 12px auto 0;
+}
+
+/* Office gallery */
+.officeRow {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.officeImage {
+  position: relative;
+  min-width: 180px;
+  height: 130px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.officeImage img {
+  object-fit: cover;
+}
+
+.officeCenter {
+  margin: 40px 0 80px;
+}
+
+/* Certificates */
+.certGrid {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.certItem {
+  position: relative;
+  height: 90px;
+  min-width: 90px;
+}
+
+.certItem img {
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .certGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .certGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

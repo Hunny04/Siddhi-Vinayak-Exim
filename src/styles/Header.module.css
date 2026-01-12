@@ -1,0 +1,110 @@
+/* Header Base */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  background: transparent;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Layout */
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  img {
+    height: 48px;
+  }
+}
+
+.logo-text {
+  h1 {
+    color: #ff9c1a;
+    font-size: 18px;
+    margin: 0;
+  }
+  span {
+    font-size: 11px;
+    color: #ddd;
+  }
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-left: 28px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+  }
+  a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #ff9c1a;
+    transition: width 0.3s ease;
+  }
+  a:hover::after {
+    width: 100%;
+  }
+}
+
+.nav a,
+.productsBtn {
+  margin-left: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.productsContainer {
+  position: relative;
+}
+
+.drawer {
+  position: absolute;
+  width: max-content;
+  top: 30px;
+  left: 0;
+  background: #222;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+
+  li {
+    width: 100%;
+    padding: 4px 10px 8px;
+  }
+  li:hover {
+    background: #333;
+    color: #ff9c1a;
+  }
+  a {
+    margin-right: 24px;
+  }
+}
