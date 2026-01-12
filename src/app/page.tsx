@@ -4,6 +4,7 @@ import ContactUs from "@/components/ContactUs";
 import FreshProducts from "@/components/FreshProducts";
 import HeroSection from "@/components/hero";
 import OfficeAndCertificates from "@/components/OfficeAndCertificates";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
 import WhatWeDo from "@/components/WhatWeDo";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <WhatWeDo />
       <FreshProducts />
       <AgricultureHero />
+      <ProjectsCarousel />
       {/* <OfficeAndCertificates /> */}
       {/* <ContactUs /> */}
     </div>
