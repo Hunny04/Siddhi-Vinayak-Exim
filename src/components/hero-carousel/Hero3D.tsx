@@ -34,13 +34,6 @@ export default function Hero3D() {
 
   return (
     <section className="relative h-screen overflow-hidden bg-[#eef3f8]">
-      {/* BIG BACK TEXT */}
-      {/* <h1
-        className="pointer-events-none absolute inset-0 flex items-center justify-center
-        text-[18vw] font-extrabold tracking-widest text-black/5">
-        {products[index].name}
-      </h1> */}
-
       {/* BIG BACKGROUND TEXT */}
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center z-0  bg-[#214d3b]/80">
         <h1
