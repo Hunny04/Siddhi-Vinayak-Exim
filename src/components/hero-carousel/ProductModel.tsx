@@ -20,11 +20,5 @@ export default function ProductModel({ modelPath }: Props) {
     }
   });
 
-  //   useEffect(() => {
-  //     if (ref.current) {
-  //       ref.current.scale.set(1.3, 1.3, 1.3);
-  //     }
-  //   }, [modelPath]);
-
-  return <primitive ref={ref} object={scene} scale={1.4} position={[0, -0.6, 0]} />;
+  return <primitive ref={ref} object={scene} scale={2} position={[0, -0.6, 0]} />;
 }

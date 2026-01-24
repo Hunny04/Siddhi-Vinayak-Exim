@@ -17,8 +17,8 @@ export default function Home() {
       <CompanyOverview />
       <WhatWeDo />
       <FreshProducts />
-      <AgricultureHero />
       <ProjectsCarousel />
+      <AgricultureHero />
       {/* <OfficeAndCertificates /> */}
       {/* <ContactUs /> */}
     </div>

@@ -29,15 +29,15 @@ type Props = {
   index: number;
 };
 
-export default function ProductScene({ index }: Props) {
+export default function RootScene({ index }: Props) {
   return (
     <Canvas camera={{ position: [0, 0, 7], fov: 35 }}>
       <ambientLight intensity={0.6} />
       <directionalLight position={[4, 6, 5]} intensity={1.2} />
       <directionalLight position={[-4, -2, -5]} intensity={0.5} />
-      <ProductModel modelPath={products[index].model} />
+      {/* Small floating roots */}
+      <SmallModels modelPath={products[index].rootModel} />
       <Environment preset="warehouse" />
-      <OrbitControls enableZoom={false} />
     </Canvas>
   );
 }

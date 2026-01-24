@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import ProductScene from "./ProductScene";
 import clsx from "clsx";
 import { gsap } from "gsap";
+import RootScene from "./RootScene";
 
 const products = [
   {
@@ -40,32 +41,46 @@ export default function Hero3D() {
         {products[index].name}
       </h1> */}
 
-      <h1
-        ref={textRef}
-        className="bg-text absolute inset-0 flex items-center justify-center
-  text-[18vw] font-extrabold tracking-widest text-black/5 select-none">
-        {products[index].name}
-      </h1>
+      {/* BIG BACKGROUND TEXT */}
+      <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center z-0  bg-[#214d3b]/80">
+        <h1
+          className="font-[Broday] font-extrabold leading-none text-gray-200/50 whitespace-nowrap"
+          style={{
+            fontSize: index == 0 ? "25vw" : "30vw",
+          }}>
+          {products[index].name}
+        </h1>
+        <h1
+          className="font-[Broday] font-extrabold leading-none text-gray-200/50 whitespace-nowrap -mt-[3.5vw]"
+          style={{
+            fontSize: index == 0 ? "25vw" : "30vw",
+          }}>
+          {products[index].name}
+        </h1>
+        <h1
+          className="font-[Broday] font-extrabold leading-none text-gray-200/50 whitespace-nowrap -mt-[3.5vw]"
+          style={{
+            fontSize: index == 0 ? "25vw" : "30vw",
+          }}>
+          {products[index].name}
+        </h1>
+        <h1
+          className="font-[Broday] font-extrabold leading-none text-gray-200/50 whitespace-nowrap -mt-[3.5vw]"
+          style={{
+            fontSize: index == 0 ? "25vw" : "30vw",
+          }}>
+          {products[index].name}
+        </h1>
+      </div>
+
+      {/* Small Roots */}
+      <div className="absolute inset-0 z-10">
+        <RootScene index={index} />
+      </div>
 
       {/* 3D CENTER */}
       <div className="absolute inset-0 z-10">
         <ProductScene index={index} />
-      </div>
-
-      {/* LEFT CARD */}
-      <div
-        className="absolute left-20 top-1/2 -translate-y-1/2 z-20 w-72
-        rounded-2xl bg-white p-6 shadow-xl transition-all">
-        <h3 className="text-lg font-semibold">{products[index].leftTitle}</h3>
-        <p className="mt-2 text-sm text-gray-600">{products[index].leftDesc}</p>
-      </div>
-
-      {/* RIGHT CARD */}
-      <div
-        className="absolute right-20 top-1/2 -translate-y-1/2 z-20
-        rounded-2xl bg-white px-6 py-4 shadow-xl">
-        <p className="text-sm text-gray-500">Quality</p>
-        <p className="text-lg font-semibold">{products[index].rightBadge}</p>
       </div>
 
       {/* CONTROLS */}

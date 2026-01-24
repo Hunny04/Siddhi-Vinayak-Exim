@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/Header.module.css";
+import Link from "next/link";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -42,7 +43,9 @@ const Header = () => {
       <header id="site-header" className={styles.header}>
         <div className={styles.container}>
           <div className={styles.logo}>
-            <img src="/logo.png" alt="OM EXIM Corporation" />
+            <Link href="/">
+              <img src="/logo.png" alt="Siddhi Vinayak Exim" />
+            </Link>
             {/* <div className="logo-text">
             <h1>OM EXIM Corporation</h1>
             <span>An ISO 22000:2005 Certified Company</span>
@@ -65,19 +68,16 @@ const Header = () => {
                 <div className={`${styles.drawer} ${open ? styles.open : ""}`} onMouseLeave={() => setOpen(false)}>
                   <ul>
                     <li>
-                      <a href="/categories/spices">Spices</a>
+                      <a href="/categories/spices">Ashwagandha Root</a>
                     </li>
                     <li>
-                      <a href="/categories/oil-seeds">Oil Seeds</a>
+                      <a href="/categories/oil-seeds">Ashwagandha Powder</a>
                     </li>
                     <li>
-                      <a href="/categories/herbs">Herbs</a>
+                      <a href="/categories/grains">Safed Musli Root</a>
                     </li>
                     <li>
-                      <a href="/categories/grains">Grains</a>
-                    </li>
-                    <li>
-                      <a href="/categories/dehydrated">Dehydrated</a>
+                      <a href="/categories/dehydrated">Safed Musli Powder</a>
                     </li>
                   </ul>
                 </div>
