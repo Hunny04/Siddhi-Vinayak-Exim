@@ -43,22 +43,24 @@ const Header = () => {
       <header id="site-header" className={styles.header}>
         <div className={styles.container}>
           <div className={styles.logo}>
-            <Link href="/">
+            {/* <Link href="/">
               <img src="/logo.png" alt="Siddhi Vinayak Exim" />
+            </Link> */}
+
+            <Link href="/" className="logo-text flex gap-3">
+              <div className="h-8 w-8 bg-white rounded-full"></div>
+              <h1>Siddhi Vinayak Exim</h1>
+              {/* <span>An ISO 22000:2005 Certified Company</span> */}
             </Link>
-            {/* <div className="logo-text">
-            <h1>OM EXIM Corporation</h1>
-            <span>An ISO 22000:2005 Certified Company</span>
-            </div> */}
           </div>
 
           <nav className={styles.nav}>
-            <a href="#" onMouseEnter={() => setOpen(false)}>
+            <Link href="/" onMouseEnter={() => setOpen(false)}>
               HOME
-            </a>
-            <a href="about-us" onMouseEnter={() => setOpen(false)}>
+            </Link>
+            <Link href="about" onMouseEnter={() => setOpen(false)}>
               ABOUT US
-            </a>
+            </Link>
             {/* PRODUCTS BUTTON */}
             <div className={styles.productsContainer}>
               <button className={styles.productsBtn} onClick={() => setOpen(!open)} onMouseEnter={() => setOpen(true)}>
@@ -68,30 +70,30 @@ const Header = () => {
                 <div className={`${styles.drawer} ${open ? styles.open : ""}`} onMouseLeave={() => setOpen(false)}>
                   <ul>
                     <li>
-                      <a href="/categories/spices">Ashwagandha Root</a>
+                      <Link href="/product/ashwagandha">Ashwagandha Root</Link>
                     </li>
                     <li>
-                      <a href="/categories/oil-seeds">Ashwagandha Powder</a>
+                      <Link href="/product/ashwagandha-powder">Ashwagandha Powder</Link>
                     </li>
                     <li>
-                      <a href="/categories/grains">Safed Musli Root</a>
+                      <Link href="/product/safedmusli">Safed Musli Root</Link>
                     </li>
                     <li>
-                      <a href="/categories/dehydrated">Safed Musli Powder</a>
+                      <Link href="/product/safedmusli-powder">Safed Musli Powder</Link>
                     </li>
                   </ul>
                 </div>
               )}
             </div>
-            <a href="#" onMouseEnter={() => setOpen(false)}>
+            <Link href="process" onMouseEnter={() => setOpen(false)}>
               PROCESS
-            </a>
-            <a href="#" onMouseEnter={() => setOpen(false)}>
+            </Link>
+            <Link href="certificates" onMouseEnter={() => setOpen(false)}>
               CERTIFICATES
-            </a>
-            <a href="#" onMouseEnter={() => setOpen(false)}>
+            </Link>
+            <Link href="contact" onMouseEnter={() => setOpen(false)}>
               CONTACT
-            </a>
+            </Link>
           </nav>
         </div>
       </header>
