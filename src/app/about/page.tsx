@@ -1,113 +1,98 @@
-import Image from "next/image";
+import { Sprout, Leaf, Globe, ShieldCheck, Tractor } from "lucide-react";
 
-export default function AboutPage() {
+const sections = [
+  {
+    title: "From the Fields We Come",
+    text: "Founded by two sons of the soil, our journey began in the fields where we learned that quality is nurtured, not manufactured.",
+    icon: Sprout,
+    side: "left",
+  },
+  {
+    vacant: true,
+  },
+  {
+    vacant: true,
+  },
+  {
+    title: "Understanding the Crop from the Seed",
+    text: "Our seed-level knowledge ensures purity, consistency, and authenticity that only farmers can promise.",
+    icon: Leaf,
+    side: "right",
+    className: "-mt-[10px]",
+  },
+  {
+    title: "Bridging Tradition with Global Demand",
+    text: "We connect traditional Indian farming wisdom with global wellness needs through ethical sourcing.",
+    icon: Globe,
+    side: "left",
+    className: "-mt-[10px]",
+  },
+  {
+    vacant: true,
+  },
+  {
+    vacant: true,
+  },
+  {
+    title: "Purity a Farmer Can Promise",
+    text: "Every batch is carefully selected, naturally processed, and responsibly handled.",
+    icon: ShieldCheck,
+    side: "right",
+    className: "-mt-[10px]",
+  },
+];
+
+export default function AboutUsOutlinedJourney() {
   return (
-    <main className="bg-white text-slate-800">
-      {/* HEADER */}
-      <section className="bg-[#2F4F4F] py-20 text-center text-white">
-        <h1 className="text-4xl font-semibold">About Us</h1>
-      </section>
+    <section className="bg-[#F7F3EE] py-24">
+      {/* Header */}
+      <div className="max-w-3xl mx-auto text-center mb-10 px-4">
+        <h1 className="text-4xl font-semibold text-[#46563F] mb-10">About Us</h1>
+        <h1 className="text-4xl font-semibold text-[#f1c46b] mb-18">LOGO</h1>
+        <h1 className="text-4xl font-semibold text-[#46563F] mb-4">Siddhi Vinayak Exim</h1>
+        <p className="text-[#f1af2c] text-2xl">Growing Quality, Delivering Trust</p>
+      </div>
 
-      {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 py-20 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Discover Our Story — Where Innovation Meets Quality</h2>
+      {/* Timeline */}
+      <div className="max-w-6xl mx-auto space-y-20 px-4 grid grid-cols-2 gap-0">
+        {sections.map((item, i) => {
+          const isLeft = item.side === "left";
+          const Icon = item.icon;
 
-        <Image src="/about/hero.jpg" alt="About" width={1100} height={520} className="rounded-xl mx-auto" />
-      </section>
+          if (item.vacant || !Icon) {
+            return <div key={i} className="h-32"></div>;
+          }
 
-      {/* JOURNEY */}
-      <section className="bg-[#F6F6F6] py-20">
-        <div className="max-w-6xl mx-auto px-6 space-y-20">
-          {[
-            {
-              title: "From Humble Beginnings",
-              text: "We started with a simple mission: deliver quality products with integrity and trust.",
-              img: "/about/story1.jpg",
-            },
-            {
-              title: "Milestones & Achievements",
-              text: "Over the years, we’ve expanded our reach and built strong partnerships worldwide.",
-              img: "/about/story2.jpg",
-              reverse: true,
-            },
-            {
-              title: "Innovation & Growth",
-              text: "Constant improvement and innovation drive our processes and services.",
-              img: "/about/story3.jpg",
-            },
-            {
-              title: "Looking Ahead",
-              text: "We continue to evolve while staying rooted in our core values.",
-              img: "/about/story4.jpg",
-              reverse: true,
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className={`grid md:grid-cols-2 gap-10 items-center ${item.reverse ? "md:flex-row-reverse" : ""}`}>
-              <Image src={item.img} alt={item.title} width={500} height={320} className="rounded-xl" />
-              <div>
-                <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
-                <p className="text-gray-600 leading-7">{item.text}</p>
+          return (
+            <div key={i} className={`relative flex mb-0 w-full ${item.className ? item.className : ""}`}>
+              {/* OUTLINED CAPSULE */}
+              <div
+                className={`relative flex items-center gap-10 border-10 border-[#5F6F52] rounded-[80px] px-14 py-12 w-full`}
+                style={{
+                  borderTopLeftRadius: isLeft ? "999px" : "0px",
+                  borderBottomLeftRadius: isLeft ? "999px" : "0px",
+                  borderTopRightRadius: isLeft ? "0px" : "999px",
+                  borderBottomRightRadius: isLeft ? "0px" : "999px",
+                  borderLeftWidth: isLeft ? "10px" : "0px",
+                  borderRightWidth: isLeft ? "0px" : "10px",
+                }}>
+                {/* Icon */}
+                <div className="shrink-0">
+                  <div className="w-24 h-24 rounded-full bg-[#5F6F52] flex items-center justify-center">
+                    <Icon size={44} className="text-white" />
+                  </div>
+                </div>
+
+                {/* Text */}
+                <div className="max-w-xl">
+                  <h3 className="text-2xl font-semibold text-[#46563F] mb-3">{item.title}</h3>
+                  <p className="text-[#6F756A] leading-relaxed">{item.text}</p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* TEAM */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-semibold mb-12">Our Awesome Team</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {["Amit Verma", "Priya Sharma", "Rohit Singh"].map((name, i) => (
-              <div key={i} className="border rounded-xl p-6">
-                <Image
-                  src={`/team/${i + 1}.jpg`}
-                  alt={name}
-                  width={260}
-                  height={260}
-                  className="rounded-lg mx-auto mb-4"
-                />
-                <h4 className="font-medium">{name}</h4>
-                <p className="text-sm text-gray-500">Team Member</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="bg-[#2F4F4F] py-20 text-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold mb-10">Don’t take our word — see what clients say</h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {["Great service!", "Highly professional team."].map((quote, i) => (
-              <div key={i} className="bg-white text-slate-800 rounded-xl p-6">
-                <p className="mb-4">“{quote}”</p>
-                <span className="text-sm text-gray-500">— Client</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-6 text-center">
-          {["Fast Shipping", "Easy to Shop", "24/7 Support", "Hassle Free Returns"].map((item, i) => (
-            <div key={i}>
-              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#F4B740]" />
-              <p className="font-medium">{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="bg-[#2F4F4F] text-white py-10 text-center">© 2026 Your Company. All Rights Reserved.</footer>
-    </main>
+          );
+        })}
+      </div>
+    </section>
   );
 }
