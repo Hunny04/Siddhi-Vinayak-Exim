@@ -70,16 +70,16 @@ const Header = () => {
                 <div className={`${styles.drawer} ${open ? styles.open : ""}`} onMouseLeave={() => setOpen(false)}>
                   <ul>
                     <li>
-                      <Link href="/product/ashwagandha">Ashwagandha Root</Link>
+                      <Link href="/products/ashwagandha">Ashwagandha Root</Link>
                     </li>
                     <li>
-                      <Link href="/product/ashwagandha-powder">Ashwagandha Powder</Link>
+                      <Link href="/products/ashwagandha-powder">Ashwagandha Powder</Link>
                     </li>
                     <li>
-                      <Link href="/product/safedmusli">Safed Musli Root</Link>
+                      <Link href="/products/safed-musli">Safed Musli Root</Link>
                     </li>
                     <li>
-                      <Link href="/product/safedmusli-powder">Safed Musli Powder</Link>
+                      <Link href="/products/safed-musli-powder">Safed Musli Powder</Link>
                     </li>
                   </ul>
                 </div>

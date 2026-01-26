@@ -40,7 +40,7 @@ export default function ProductScene({ index }: Props) {
       <directionalLight position={[-4, -2, -5]} intensity={0.5} />
       <ProductModel modelPath={products[index].model} position={products[index]?.position} />
       <Environment preset="warehouse" />
-      <OrbitControls enableZoom={false} />
+      {/* <OrbitControls enableZoom={false} /> */}
     </Canvas>
   );
 }
