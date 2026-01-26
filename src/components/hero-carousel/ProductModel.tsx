@@ -7,9 +7,10 @@ import { useEffect, useRef } from "react";
 
 type Props = {
   modelPath: string;
+  position: [number, number, number];
 };
 
-export default function ProductModel({ modelPath }: Props) {
+export default function ProductModel({ modelPath, position }: Props) {
   const ref = useRef<Group>(null);
   const { scene } = useGLTF(modelPath);
 
@@ -20,5 +21,5 @@ export default function ProductModel({ modelPath }: Props) {
     }
   });
 
-  return <primitive ref={ref} object={scene} scale={2} position={[0, -0.6, 0]} />;
+  return <primitive ref={ref} object={scene} scale={2} position={position} />;
 }

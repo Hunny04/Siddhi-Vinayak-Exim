@@ -1,75 +1,56 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ProductScene from "./ProductScene";
 import clsx from "clsx";
 import { gsap } from "gsap";
-import RootScene from "./RootScene";
+import Image from "next/image";
 
 const products = [
   {
     name: "ASHWAGANDHA",
-    leftTitle: "Natural Adaptogen",
-    leftDesc: "Boosts strength, immunity, and stress resistance.",
-    rightBadge: "Export Grade",
+    desc: "ROOTS & POWDER",
+    bgImage: "/images/ash-roots-hero.png",
   },
   {
     name: "SAFED MUSLI",
-    leftTitle: "Vitality Enhancer",
-    leftDesc: "Traditionally used for energy and stamina.",
-    rightBadge: "Premium Quality",
+    desc: "ROOTS & POWDER",
+    bgImage: "/images/safed-musli-hero.png",
   },
 ];
 
 export default function Hero3D() {
   const [index, setIndex] = useState(0);
 
-  const textRef = useRef<HTMLHeadingElement>(null);
-
+  // autoscroll products
   useEffect(() => {
-    if (!textRef.current) return;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % products.length);
+    }, 3000);
 
-    gsap.fromTo(textRef.current, { opacity: 0 }, { opacity: 1, duration: 0.8 });
-  }, [index]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative h-screen overflow-hidden bg-[#eef3f8]">
       {/* BIG BACKGROUND TEXT */}
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center z-0  bg-[#214d3b]/80">
-        <h1
-          className="font-[Broday] font-extrabold leading-none text-gray-200/50 whitespace-nowrap"
+        <Image src={products[index]?.bgImage} alt="ash-roots" fill className="cover" />
+        <div className="bg-black w-full h-full absolute inset-0 opacity-25"></div>
+        <div
+          className="bg-white w-full absolute bottom-0 min-h-[35vh] py-8 px-36 text-[#214d3b]"
           style={{
-            fontSize: index == 0 ? "25vw" : "30vw",
+            textAlign: index === 0 ? "left" : "right",
           }}>
-          {products[index].name}
-        </h1>
-        <h1
-          className="font-[Broday] font-extrabold leading-none text-gray-200/50 whitespace-nowrap -mt-[3.5vw]"
-          style={{
-            fontSize: index == 0 ? "25vw" : "30vw",
-          }}>
-          {products[index].name}
-        </h1>
-        <h1
-          className="font-[Broday] font-extrabold leading-none text-gray-200/50 whitespace-nowrap -mt-[3.5vw]"
-          style={{
-            fontSize: index == 0 ? "25vw" : "30vw",
-          }}>
-          {products[index].name}
-        </h1>
-        <h1
-          className="font-[Broday] font-extrabold leading-none text-gray-200/50 whitespace-nowrap -mt-[3.5vw]"
-          style={{
-            fontSize: index == 0 ? "25vw" : "30vw",
-          }}>
-          {products[index].name}
-        </h1>
+          <h1 className="font-[Faible] text-7xl font-bold">{products[index].name}</h1>
+          <h1 className="font-[Faible] text-3xl">{products[index].desc}</h1>
+        </div>
       </div>
 
       {/* Small Roots */}
-      <div className="absolute inset-0 z-10">
+      {/* <div className="absolute inset-0 z-10">
         <RootScene index={index} />
-      </div>
+      </div> */}
 
       {/* 3D CENTER */}
       <div className="absolute inset-0 z-10">

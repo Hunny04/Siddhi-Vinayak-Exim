@@ -49,7 +49,7 @@ const Header = () => {
 
             <Link href="/" className="logo-text flex gap-3">
               <div className="h-8 w-8 bg-white rounded-full"></div>
-              <h1>Siddhi Vinayak Exim</h1>
+              <h1 className="text-white">Siddhi Vinayak Exim</h1>
               {/* <span>An ISO 22000:2005 Certified Company</span> */}
             </Link>
           </div>

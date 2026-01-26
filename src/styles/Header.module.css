@@ -4,8 +4,10 @@
   top: 0;
   width: 100%;
   z-index: 10000;
-  background: transparent;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  background: #214d3b;
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 /* Layout */
