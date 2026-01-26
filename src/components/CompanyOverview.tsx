@@ -2,22 +2,22 @@ import React from "react";
 
 const AgricultureIntro = () => {
   return (
-    <section className="w-full bg-white py-20 font-poppins">
+    <section className="w-full bg-white pt-0 pb-20 font-poppins">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT IMAGE AREA */}
         <div className="relative flex justify-center">
           {/* Main Big Circle */}
-          <div className="relative w-105 h-105 rounded-full border-[6px] border-yellow-400 overflow-hidden">
-            <img src="/images/farming-main.jpg" alt="Organic Farming" className="w-full h-full object-cover" />
+          <div className="relative w-105 h-105 rounded-full border-[6px] border-white overflow-hidden">
+            <img src="/images/farming-main.png" alt="Organic Farming" className="w-full h-full object-cover" />
           </div>
 
           {/* Top Small Circle */}
-          <div className="absolute -top-6 left-20 w-36 h-36 rounded-full border-4 border-white overflow-hidden shadow-lg">
+          <div className="absolute -top-6 left-20 w-36 h-36 rounded-full border-4 border-yellow-400 overflow-hidden shadow-lg">
             <img src="/images/soil.jpg" alt="Soil" className="w-full h-full object-cover" />
           </div>
 
           {/* Bottom Small Circle */}
-          <div className="absolute -bottom-4 right-16 w-36 h-36 rounded-full border-4 border-white overflow-hidden shadow-lg">
+          <div className="absolute -bottom-4 right-16 w-36 h-36 rounded-full border-4 border-yellow-400 overflow-hidden shadow-lg">
             <img src="/images/planting.jpg" alt="Planting" className="w-full h-full object-cover" />
           </div>
         </div>
@@ -29,19 +29,22 @@ const AgricultureIntro = () => {
           </p>
 
           <h2 className="text-4xl font-extrabold leading-tight mb-6 font-[Campuni]">
-            <span className="text-yellow-500">Agriculture &</span>{" "}
-            <span className="text-gray-900">
-              Organic <br /> Product Farm
-            </span>
+            <span className="text-yellow-500">Roots in the soil</span> <br />
+            <span className="text-gray-900">Vision For World</span>
           </h2>
 
           <p className="text-gray-600 mb-6 leading-relaxed max-w-xl">
-            There are many variations of passages of available but the majority have suffered alteration in some form,
-            by injected humour or randomised words even slightly believable.
+            Siddhi Vinayak Exim was founded by two sons of the soil. Growing up in a farming family, we learned that
+            quality isn't created in a factory—it is nurtured in the field.
+          </p>
+          <p className="text-gray-600 mb-6 leading-relaxed max-w-xl">
+            We aren't just exporters; we are the bridge between the traditional wisdom of Indian farming and the global
+            demand for wellness. Because we understand the crop from the seed level, we guarantee a level of purity that
+            only a farmer can promise.
           </p>
 
           {/* CHECK LIST */}
-          <ul className="space-y-3 mb-8">
+          {/* <ul className="space-y-3 mb-8">
             {["Organic food is vitamin-rich.", "Eat organic, meet demand.", "Organic food isn't irradiated."].map(
               (item, idx) => (
                 <li key={idx} className="flex items-center gap-3">
@@ -50,14 +53,14 @@ const AgricultureIntro = () => {
                   </span>
                   <span className="text-gray-700">{item}</span>
                 </li>
-              )
+              ),
             )}
-          </ul>
+          </ul> */}
 
           {/* PROGRESS CIRCLES */}
           <div className="flex gap-10">
-            <ProgressCircle value={80} label="Organic Solutions" />
-            <ProgressCircle value={60} label="Quality Agriculture" />
+            <ProgressCircle value={100} label="Organic Solutions" />
+            <ProgressCircle value={100} label="Quality Agriculture" />
           </div>
         </div>
       </div>
