@@ -1,6 +1,7 @@
 "use client";
 import AgricultureHero from "@/components/AgricultureHero";
 import CompanyOverview from "@/components/CompanyOverview";
+import ContactUs from "@/components/contact";
 import FreshProducts from "@/components/FreshProducts";
 import Hero3D from "@/components/hero-carousel/Hero3D";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
@@ -19,6 +20,7 @@ export default function Home() {
       <FreshProducts />
       <ProjectsCarousel />
       <AgricultureHero />
+      <ContactUs />
       {/* <OfficeAndCertificates /> */}
       {/* <ContactUs /> */}
     </div>

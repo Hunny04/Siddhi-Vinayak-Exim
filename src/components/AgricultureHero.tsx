@@ -1,6 +1,6 @@
 export default function AgricultureHero() {
   return (
-    <section className="relative bg-[#eef2ee] pb-40">
+    <section className="relative bg-white pb-0">
       <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         {/* VIDEO */}
         <video

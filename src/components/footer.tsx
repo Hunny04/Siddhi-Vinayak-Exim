@@ -40,7 +40,7 @@ export default function Footer() {
 
       <div className={styles.copyright}>
         © All right reserved 2025 <br />
-        Proudly powered by Hunny | Theme: Corporate Plus by Acme Themes
+        Proudly powered by Siddhi Vinayak Exim
       </div>
     </footer>
   );
