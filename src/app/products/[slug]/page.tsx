@@ -58,7 +58,7 @@ export default async function ProductPage({ params }: Props) {
           <p className="text-green-600 text-sm mb-4">● In Stock</p>
 
           <button className="bg-[#214d3b] hover:bg-[#f1c46b] text-white px-6 py-2 text-xl font-medium mb-6 rounded transition-all duration-300">
-            SEND INQUIRY
+            <Link href="/inquire">SEND INQUIRY</Link>
           </button>
 
           {/* PRODUCT SPEC TABLE */}

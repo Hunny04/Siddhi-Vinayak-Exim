@@ -1,27 +1,33 @@
+import Link from "next/link";
+
 export const services = [
   {
     title: "Ashwagandha",
     secondTitle: "(Whole Roots)",
     description: "Premium whole roots of Ashwagandha (Withania somnifera), valued for high Withanolide content.",
     image: "/images/ashwagandha.png",
+    link: "/products/ashwagandha",
   },
   {
     title: "Ashwagandha Powder",
     secondTitle: "",
     description: "Finely ground Ashwagandha root powder rich in Withanolides and natural minerals.",
     image: "/images/ashwagandha-powder.png",
+    link: "/products/ashwagandha-powder",
   },
   {
     title: "Safed Musli",
     secondTitle: "(Whole Roots)",
     description: "Rare Safed Musli (Chlorophytum borivilianum) whole roots, known as 'White Gold'.",
     image: "/images/safed-musli.png",
+    link: "/products/safed-musli",
   },
   {
     title: "Safed Musli Powder",
     description:
       "Traditionally consumed as a daily health tonic to improve energy, reproductive wellness, joint health, and immune strength.",
     image: "/images/safed-musli-powder.png",
+    link: "/products/safed-musli-powder",
   },
 ];
 
@@ -67,15 +73,24 @@ export default function WhatWeDo() {
               </div>
 
               <div>
-                <button className="w-full py-2 px-4 bg-[#f1c46b] rounded-md mt-2">Get Quote</button>
-                <button className="w-full py-2 px-4 bg-[#f1c46b] rounded-md mt-2">View Product</button>
+                <Link href="/inquire">
+                  <button className="w-full py-2 px-4 bg-transparent hover:bg-[#f1c46b] border-4 border-[#f1c46b] transition-all duration-300 rounded-md mt-2 cursor-pointer">
+                    Get Quote
+                  </button>
+                </Link>
+                <Link href={item.link}>
+                  {" "}
+                  <button className="w-full py-2 px-4 bg-transparent hover:bg-[#f1c46b] border-4 border-[#f1c46b] transition-all duration-300 rounded-md mt-2 cursor-pointer">
+                    View Product
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
         </div>
-        <button className="bg-[#f1c46b] text-[#214d3b] font-bold py-2 px-4 mt-6 mx-auto rounded-lg shadow-lg transition">
+        {/* <button className="bg-[#f1c46b] text-[#214d3b] font-bold py-2 px-4 mt-6 mx-auto rounded-lg shadow-lg transition">
           View All
-        </button>
+        </button> */}
       </div>
     </section>
   );

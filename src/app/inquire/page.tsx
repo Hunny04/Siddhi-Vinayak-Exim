@@ -1,0 +1,23 @@
+import InquiryForm from "@/components/InquiryForm";
+import "@/styles/inquire.css";
+
+export default function InquirePage() {
+  return (
+    <main
+      className="min-h-screen bg-gray-50 flex items-start justify-center"
+      style={{
+        background: "url(/images/about-bg.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "100%",
+        backgroundPosition: "top",
+      }}>
+      <div
+        className="pb-16 pt-30 px-4 w-full flex justify-center items-center"
+        style={{
+          backdropFilter: "blur(10px)",
+        }}>
+        <InquiryForm />
+      </div>
+    </main>
+  );
+}
