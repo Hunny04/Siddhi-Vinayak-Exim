@@ -15,9 +15,9 @@ export default function Footer() {
             <li>
               <Link href="about">ABOUT US</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="products">PRODUCTS</Link>
-            </li>
+            </li> */}
             <li>
               <Link href="process">PROCESS</Link>
             </li>
