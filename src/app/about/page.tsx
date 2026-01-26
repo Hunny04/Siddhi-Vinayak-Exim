@@ -58,17 +58,18 @@ export default function AboutUsOutlinedJourney() {
           backdropFilter: "blur(10px)",
         }}>
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-10 px-4 flex flex-col items-center">
+        <div className="max-w-3xl mx-auto text-center mb-10 px-4 flex flex-col items-center relative">
           <h1 className="text-4xl font-semibold text-[#46563F] mb-10 bg-[#f1c46b] w-fit px-16 py-4 rounded-full">
             About Us
           </h1>
           <h1 className="text-4xl font-semibold text-[#f1c46b] mb-18">LOGO</h1>
           <h1 className="text-4xl font-semibold text-[#46563F] mb-4">Siddhi Vinayak Exim</h1>
           <p className="text-[#f1af2c] text-2xl">Growing Quality, Delivering Trust</p>
+          <div className="w-68 h-32 rounded-r-full border-r-10 border-b-10 border-[#214d3b] absolute right-28 -bottom-12.5"></div>
         </div>
 
         {/* Timeline */}
-        <div className="max-w-6xl mx-auto space-y-20 px-4 grid grid-cols-2 gap-0">
+        <div className="max-w-6xl mx-auto space-y-20 px-4 grid grid-cols-2 gap-0 relative">
           {sections.map((item, i) => {
             const isLeft = item.side === "left";
             const Icon = item.icon;
@@ -81,7 +82,7 @@ export default function AboutUsOutlinedJourney() {
               <div key={i} className={`relative flex mb-0 w-full ${item.className ? item.className : ""}`}>
                 {/* OUTLINED CAPSULE */}
                 <div
-                  className={`relative flex items-center gap-10 border-10 border-[#5F6F52] rounded-[80px] px-14 py-12 w-full`}
+                  className={`relative flex items-center gap-10 border-10 border-[#214d3b] rounded-[80px] px-14 py-12 w-full`}
                   style={{
                     borderTopLeftRadius: isLeft ? "999px" : "0px",
                     borderBottomLeftRadius: isLeft ? "999px" : "0px",
@@ -106,6 +107,7 @@ export default function AboutUsOutlinedJourney() {
               </div>
             );
           })}
+          <div className="-z-10 w-68 h-32 rounded-l-full border-l-10 border-t-10 border-[#214d3b] absolute left-80 -bottom-29.5"></div>
         </div>
       </div>
     </section>
