@@ -64,7 +64,7 @@ export default function AboutUsOutlinedJourney() {
           </h1>
           <h1 className="text-4xl font-semibold text-[#f1c46b] mb-18">LOGO</h1>
           <h1 className="text-4xl font-semibold text-[#46563F] mb-4">Siddhi Vinayak Exim</h1>
-          <p className="text-[#f1af2c] text-2xl">Growing Quality, Delivering Trust</p>
+          <p className="text-[#f1af2c] text-2xl mb-2">Growing Quality, Delivering Trust</p>
           <div className="w-68 h-32 rounded-r-full border-r-10 border-b-10 border-[#214d3b] absolute right-28 -bottom-12.5"></div>
         </div>
 
