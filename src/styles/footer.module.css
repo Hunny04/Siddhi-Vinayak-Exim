@@ -47,6 +47,10 @@
   text-decoration: underline;
 }
 
+.number {
+  margin-top: 10px;
+}
+
 .highlight {
   color: #ff3d3d;
 }

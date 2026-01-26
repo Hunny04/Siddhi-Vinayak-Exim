@@ -9,32 +9,50 @@ export default function Footer() {
         <div>
           <h4>MENU</h4>
           <ul>
-            <li>HOME</li>
+            <li>
+              <Link href="/">HOME</Link>
+            </li>
             <li>
               <Link href="about-us">ABOUT US</Link>
             </li>
-            <li>PRODUCTS</li>
-            <li>PROCESS</li>
-            <li>HARVEST CHART</li>
+            <li>
+              <Link href="products">PRODUCTS</Link>
+            </li>
+            <li>
+              <Link href="process">PROCESS</Link>
+            </li>
+            <li>
+              <Link href="contact">CONTACT US</Link>
+            </li>
+            <li>
+              <Link href="certificates">CERTIFICATES</Link>
+            </li>
           </ul>
         </div>
 
         <div>
           <h4>PRODUCTS</h4>
           <ul>
-            <li>SPICES</li>
-            <li>OIL SEEDS</li>
-            <li>HERBS</li>
+            <li>
+              <Link href="/products/ashwagandha">Ashwagandha Roots</Link>
+            </li>
+            <li>
+              <Link href="/products/ashwagandha-powder">Ashwagandha Powder</Link>
+            </li>
+            <li>
+              <Link href="/products/safed-musli">Safed Musli Roots</Link>
+            </li>
+            <li>
+              <Link href="/products/safed-musli-powder">Safed Musli Powder</Link>
+            </li>
           </ul>
         </div>
 
         <div>
           <h4>CONTACT</h4>
-          <p>
-            R.s No. 4942, Near Labh Sortex, Opp. Trishul Industries, Unjha - Aithor Road, Unjha - 384170, Gujarat -
-            India.
-          </p>
-          <p className={styles.email}>omeximcorporation@gmail.com</p>
+          <p>Surat, Gujarat - India.</p>
+          <p className={styles.email}>siddhivinayakeximtbp55@gmail.com</p>
+          <p className={styles.number}>8320708852 | 8733928558</p>
         </div>
       </div>
 
