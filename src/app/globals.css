@@ -124,8 +124,9 @@
 }
 
 .scrolled {
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  background-color: #214d3b !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  color: white !important;
 }
 
 /* ============================= */
