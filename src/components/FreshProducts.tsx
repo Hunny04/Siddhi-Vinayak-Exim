@@ -21,13 +21,13 @@ const products = [
 
 export default function FreshProducts() {
   return (
-    <section className="relative bg-[#214d3b] pb-24 pt-0 overflow-hidden">
+    <section className="relative bg-[#214d3b] md:pt-0 pt-24 pb-20 overflow-hidden">
       {/* subtle texture overlay */}
       <div className="absolute inset-0 opacity-10 bg-size-[24px_24px]" />
 
       <div className="relative mx-auto text-center">
         {/* HEADING */}
-        <h2 className="font-campuni text-2xl md:text-5xl text-[#f1c46b] mb-10 leading-relaxed font-[Kgi]">
+        <h2 className="font-campuni text-3xl md:text-5xl text-[#f1c46b] mb-10 leading-relaxed font-[Kgi]">
           Healthy Life With
           <br />
           <span className="block mt-2">Fresh Products</span>

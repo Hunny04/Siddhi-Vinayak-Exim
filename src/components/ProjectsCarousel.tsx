@@ -40,7 +40,7 @@ export default function ProjectsCarousel() {
             loop: true,
           }}
           className="w-full">
-          <CarouselContent className="ml-6">
+          <CarouselContent className="md:ml-6">
             {projects.map((project, index) => (
               <CarouselItem key={index} className="pl-6 basis-[85%] sm:basis-[60%] md:basis-[45%] lg:basis-[32%]">
                 <div className="relative h-105 rounded-3xl overflow-hidden group">
