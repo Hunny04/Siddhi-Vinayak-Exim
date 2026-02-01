@@ -37,10 +37,12 @@ export default function Example() {
           <Popover open={open} onOpenChange={setOpen}>
             <div onMouseEnter={() => setOpen(true)}>
               <PopoverTrigger asChild>
-                <button className="flex items-center gap-x-1 text-sm/6 font-semibold text-[#214d3b]">
-                  Product
-                  <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-500" />
-                </button>
+                <Link href="/products">
+                  <button className="flex items-center gap-x-1 text-sm/6 font-semibold text-[#214d3b] cursor-pointer">
+                    Product
+                    <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-500" />
+                  </button>
+                </Link>
               </PopoverTrigger>
               <PopoverContent className="p-2">
                 <div className="p-0">

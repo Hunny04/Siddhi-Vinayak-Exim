@@ -158,7 +158,7 @@ export async function POST(req: Request) {
 
     await transporter.sendMail({
       from: `"Website Inquiry"`,
-      to: "vandanp2912@gmail.com",
+      to: "siddhivinayakeximtbp55@gmail.com",
       subject: "New Inquiry - Siddhi Vinayak Exim",
       html,
     });
