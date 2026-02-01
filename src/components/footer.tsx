@@ -14,7 +14,7 @@ export default function Footer() {
     if (pathname === "/") {
       timer = setTimeout(() => setShow(false), 2500);
     } else {
-      setShow(true);
+      setShow(false);
     }
     return () => {
       if (timer) clearTimeout(timer);
