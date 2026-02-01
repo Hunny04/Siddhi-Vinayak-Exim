@@ -1,6 +1,7 @@
 "use client";
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Link from "next/link";
 
 const projects = [
   {
@@ -56,9 +57,11 @@ export default function ProjectsCarousel() {
                     <h3 className="text-xl font-campuni font-bold leading-snug">{project.title}</h3>
 
                     {/* ARROW */}
-                    <div className="mt-4 w-9 h-9 rounded-full border border-[#f1c46b] flex items-center justify-center group-hover:bg-[#f1c46b] transition">
-                      <span className="text-[#f1c46b] group-hover:text-black text-lg">→</span>
-                    </div>
+                    <Link href="/certificates">
+                      <div className="mt-4 w-9 h-9 rounded-full border border-[#f1c46b] flex items-center justify-center group-hover:bg-[#f1c46b] transition">
+                        <span className="text-[#f1c46b] group-hover:text-black text-lg">→</span>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </CarouselItem>

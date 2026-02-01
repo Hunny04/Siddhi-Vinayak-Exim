@@ -37,11 +37,12 @@ export default function Example() {
         display: show ? "none" : "block",
       }}>
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 py-3 lg:px-8">
-        <div className="flex lg:flex-1">
+        <div className="flex lg:flex-1 items-center gap-2">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Siddhi Vinayak Exim</span>
-            <Image alt="Logo" src="/logo.png" height={32} width={50} className="md:h-14 h-8 w-auto object-contain" />
+            <Image alt="Logo" src="/logo.png" height={32} width={50} className="md:h-10 h-6 w-auto object-contain" />
           </Link>
+          <h1 className="text-[#214d3b] text-lg font-[poppins] mt-1.5">Siddhi Vinayak Exim</h1>
         </div>
         <div className="flex lg:hidden">
           <button
