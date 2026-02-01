@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useGLTF } from "@react-three/drei";
 
 export default function SplashScreen({ children }: { children: React.ReactNode }) {
   const [show, setShow] = useState(true);
@@ -8,6 +9,11 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
   useEffect(() => {
     const timer = setTimeout(() => setShow(false), 2500);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    useGLTF.preload("/models/ashwagandha.glb");
+    useGLTF.preload("/models/safed_musli.glb");
   }, []);
 
   if (show) {

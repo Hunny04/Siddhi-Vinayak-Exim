@@ -32,7 +32,7 @@ export default function SceneContent({ index }: Props) {
 
       <Suspense fallback={<SceneLoader />}>
         <ProductModel
-          modelPath={index === 0 ? "/models/ashwagandha.glb" : "/models/safed_musli.glb"}
+          modelPath={index === 0 ? "/models/ashwagandha-compress.glb" : "/models/safed-musli-compress.glb"}
           position={layout.position}
           zoom={layout.zoom}
         />
