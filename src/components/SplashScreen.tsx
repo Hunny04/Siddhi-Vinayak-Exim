@@ -12,8 +12,8 @@ export default function SplashScreen({ children }: { children: React.ReactNode }
   }, []);
 
   useEffect(() => {
-    useGLTF.preload("/models/ashwagandha.glb");
-    useGLTF.preload("/models/safed_musli.glb");
+    useGLTF.preload("/models/ashwagandha-compress.glb");
+    useGLTF.preload("/models/safed-musli-compress.glb");
   }, []);
 
   if (show) {
