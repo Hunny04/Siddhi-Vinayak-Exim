@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 
 const ContactUs = ({ showDetails = false }: { showDetails?: boolean }) => {
   return (
@@ -11,7 +10,6 @@ const ContactUs = ({ showDetails = false }: { showDetails?: boolean }) => {
           backgroundImage: "url('/images/world-map.png')",
         }}
       />
-      {/* <div className="absolute inset-0 bg-black/60" /> */}
 
       <div
         className="flex flex-col items-center justify-center z-10 px-4 py-16 w-full"

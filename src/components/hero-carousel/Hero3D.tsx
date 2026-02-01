@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import ProductScene from "./ProductScene";
 import clsx from "clsx";
-import { gsap } from "gsap";
 import Image from "next/image";
 
 const products = [
@@ -23,13 +22,13 @@ export default function Hero3D() {
   const [index, setIndex] = useState(0);
 
   // autoscroll products
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setIndex((prev) => (prev + 1) % products.length);
-  //   }, 3000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % products.length);
+    }, 3000);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative h-screen overflow-hidden bg-[#eef3f8]">

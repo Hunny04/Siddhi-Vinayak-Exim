@@ -7,7 +7,7 @@ export default function InquirePage() {
       className="min-h-screen bg-gray-50 flex items-start justify-center"
       style={{
         background: "url(/images/about-bg.jpg)",
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "repeat-y",
         backgroundSize: "100%",
         backgroundPosition: "top",
       }}>

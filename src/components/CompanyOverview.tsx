@@ -1,5 +1,3 @@
-import React from "react";
-
 const AgricultureIntro = () => {
   return (
     <section className="w-full bg-white md:pt-0 pt-14 pb-20 font-poppins">

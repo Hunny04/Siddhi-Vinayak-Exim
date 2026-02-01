@@ -46,14 +46,13 @@ const sections = [
 
 export default function AboutUsOutlinedJourney() {
   const isMobile = useIsMobile();
-  const verSmallDevice = useIsMobile(375);
 
   return (
     <section
       className="bg-[#F7F3EE]"
       style={{
         background: "url(/images/about-bg.jpg)",
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "repeat-y",
         backgroundSize: "100%",
         backgroundPosition: "top",
       }}>
@@ -64,12 +63,12 @@ export default function AboutUsOutlinedJourney() {
         }}>
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 px-4 flex flex-col items-center relative">
-          <h1 className="text-4xl font-semibold text-[#46563F] mb-10 bg-[#f1c46b] w-fit px-16 py-4 rounded-full">
+          <h1 className="text-2xl md:text-4xl font-semibold text-[#46563F] mb-10 bg-[#f1c46b] w-fit px-16 py-4 rounded-full">
             About Us
           </h1>
-          <h1 className="text-4xl font-semibold text-[#f1c46b] mb-18">LOGO</h1>
-          <h1 className="text-4xl font-semibold text-[#46563F] mb-4">Siddhi Vinayak Exim</h1>
-          <p className="text-[#f1af2c] text-2xl mb-2">Growing Quality, Delivering Trust</p>
+          <h1 className="text-2xl md:text-4xl font-semibold text-[#f1c46b] mb-10 md:mb-18">LOGO</h1>
+          <h1 className="text-2xl md:text-4xl font-semibold text-[#46563F] mb-4">Siddhi Vinayak Exim</h1>
+          <p className="text-[#f1af2c] text-lg md:text-2xl mb-2">Growing Quality, Delivering Trust</p>
           <div className="w-68 h-32 md:block hidden rounded-r-full border-r-10 border-b-10 border-[#214d3b] absolute right-28 -bottom-12.5"></div>
         </div>
 

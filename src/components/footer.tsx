@@ -1,4 +1,4 @@
-// src/components/ContactAndFooter.tsx
+"use client";
 import styles from "@/styles/footer.module.css";
 import Link from "next/link";
 
@@ -19,7 +19,7 @@ export default function Footer() {
               <Link href="products">PRODUCTS</Link>
             </li> */}
             <li>
-              <Link href="process">PROCESS</Link>
+              <Link href="career">CAREER</Link>
             </li>
             <li>
               <Link href="contact">CONTACT US</Link>
@@ -48,7 +48,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="md:col-span-1 col-span-2">
           <h4>CONTACT</h4>
           <p>Surat, Gujarat - India.</p>
           <p className={styles.email}>siddhivinayakeximtbp55@gmail.com</p>

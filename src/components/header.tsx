@@ -1,39 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
-import {
-  Popover,
-  PopoverContent,
-  PopoverDescription,
-  PopoverHeader,
-  PopoverTitle,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from "@heroicons/react/20/solid";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import Image from "next/image";
 import { products } from "@/data/products";
 import Link from "next/link";
-import { Button } from "./ui/button";
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -88,8 +63,8 @@ export default function Example() {
           <Link href="about" className="text-sm/6 font-semibold text-[#214d3b]">
             About
           </Link>
-          <Link href="process" className="text-sm/6 font-semibold text-[#214d3b]">
-            Process
+          <Link href="career" className="text-sm/6 font-semibold text-[#214d3b]">
+            Career
           </Link>
           <Link href="certificates" className="text-sm/6 font-semibold text-[#214d3b]">
             Certificates
@@ -105,7 +80,7 @@ export default function Example() {
         </div>
       </nav>
       <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} direction="right">
-        <DrawerContent className="sm:max-w-sm w-full! overflow-y-auto p-4">
+        <DrawerContent className="sm:max-w-sm w-full! overflow-y-auto p-4 after:w-0!">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -146,9 +121,9 @@ export default function Example() {
                   About
                 </Link>
                 <Link
-                  href="process"
+                  href="career"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
-                  Process
+                  Career
                 </Link>
                 <Link
                   href="certificates"
