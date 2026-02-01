@@ -1,4 +1,4 @@
-import InquiryForm from "@/components/InquiryForm";
+import InquiryFormWrapper from "@/components/InquiryFormWrapper";
 import "@/styles/inquire.css";
 
 export default function InquirePage() {
@@ -16,7 +16,7 @@ export default function InquirePage() {
         style={{
           backdropFilter: "blur(10px)",
         }}>
-        <InquiryForm />
+        <InquiryFormWrapper />
       </div>
     </main>
   );

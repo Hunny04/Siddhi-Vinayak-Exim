@@ -19,7 +19,6 @@ export default function Example() {
 
   useEffect(() => {
     let timer: NodeJS.Timeout | undefined;
-    console.log("Pathname in Header:", pathname, pathname === "/");
     if (pathname === "/") {
       timer = setTimeout(() => setShow(false), 2500);
     } else {
