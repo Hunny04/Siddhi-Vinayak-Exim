@@ -2,10 +2,32 @@
 import { products } from "@/data/products";
 import styles from "@/styles/footer.module.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout | undefined;
+    if (pathname === "/") {
+      timer = setTimeout(() => setShow(false), 2500);
+    } else {
+      setShow(true);
+    }
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={styles.footer}
+      id="site-footer"
+      style={{
+        display: show ? "none" : "block",
+      }}>
       <div className={styles.footerGrid}>
         <div>
           <h4>MENU</h4>

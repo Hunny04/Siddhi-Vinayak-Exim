@@ -46,11 +46,6 @@ export default function Hero3D() {
         </div>
       </div>
 
-      {/* Small Roots */}
-      {/* <div className="absolute inset-0 z-10">
-        <RootScene index={index} />
-      </div> */}
-
       {/* 3D CENTER */}
       <div className="absolute inset-0 z-10">
         <ProductScene index={index} />

@@ -1,7 +1,8 @@
 import { useThree } from "@react-three/fiber";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Environment } from "@react-three/drei";
 import ProductModel from "./ProductModel";
+import SceneLoader from "./SceneLoader";
 
 type Props = {
   index: number;
@@ -29,12 +30,13 @@ export default function SceneContent({ index }: Props) {
       <directionalLight position={[4, 6, 5]} intensity={1.2} />
       <directionalLight position={[-4, -2, -5]} intensity={0.5} />
 
-      <ProductModel
-        modelPath={index === 0 ? "/models/ashwagandha.glb" : "/models/safed_musli.glb"}
-        position={layout.position}
-        zoom={layout.zoom}
-      />
-
+      <Suspense fallback={<SceneLoader />}>
+        <ProductModel
+          modelPath={index === 0 ? "/models/ashwagandha.glb" : "/models/safed_musli.glb"}
+          position={layout.position}
+          zoom={layout.zoom}
+        />
+      </Suspense>
       <Environment preset="warehouse" />
     </>
   );

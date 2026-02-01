@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -9,13 +9,34 @@ import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import Image from "next/image";
 import { products } from "@/data/products";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Example() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
+  const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout | undefined;
+    console.log("Pathname in Header:", pathname, pathname === "/");
+    if (pathname === "/") {
+      timer = setTimeout(() => setShow(false), 2500);
+    } else {
+      setShow(false);
+    }
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, []);
 
   return (
-    <header id="site-header" className="bg-white sticky top-0 z-50 shadow-md">
+    <header
+      id="site-header"
+      className="bg-white sticky top-0 z-50 shadow-md"
+      style={{
+        display: show ? "none" : "block",
+      }}>
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 py-3 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
@@ -82,7 +103,7 @@ export default function Example() {
         </div>
       </nav>
       <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} direction="right">
-        <DrawerContent className="sm:max-w-sm w-full! overflow-y-auto p-4 after:w-0!">
+        <DrawerContent className="sm:max-w-sm w-full! overflow-y-auto p-4 after:w-0! z-99999">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
