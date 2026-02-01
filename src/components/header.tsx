@@ -42,8 +42,8 @@ export default function Example() {
                   <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-500" />
                 </button>
               </PopoverTrigger>
-              <PopoverContent>
-                <div className="p-2">
+              <PopoverContent className="p-2">
+                <div className="p-0">
                   {products.map((item) => (
                     <div
                       key={item.name}
@@ -60,16 +60,16 @@ export default function Example() {
               </PopoverContent>
             </div>
           </Popover>
-          <Link href="about" className="text-sm/6 font-semibold text-[#214d3b]">
+          <Link href="/about" className="text-sm/6 font-semibold text-[#214d3b]">
             About
           </Link>
-          <Link href="career" className="text-sm/6 font-semibold text-[#214d3b]">
+          <Link href="/careers" className="text-sm/6 font-semibold text-[#214d3b]">
             Career
           </Link>
-          <Link href="certificates" className="text-sm/6 font-semibold text-[#214d3b]">
+          <Link href="/certificates" className="text-sm/6 font-semibold text-[#214d3b]">
             Certificates
           </Link>
-          <Link href="contact" className="text-sm/6 font-semibold text-[#214d3b]">
+          <Link href="/contact" className="text-sm/6 font-semibold text-[#214d3b]">
             Contact
           </Link>
         </div>
@@ -116,22 +116,22 @@ export default function Example() {
                 </Disclosure>
 
                 <Link
-                  href="about"
+                  href="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
                   About
                 </Link>
                 <Link
-                  href="career"
+                  href="/careers"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
                   Career
                 </Link>
                 <Link
-                  href="certificates"
+                  href="/certificates"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
                   Certificates
                 </Link>
                 <Link
-                  href="contact"
+                  href="/contact"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
                   Contact
                 </Link>

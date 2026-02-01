@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getRelatedProducts } from "./generateStaticParams";
 import Link from "next/link";
+import { Award, CheckCircle, Hash, Package } from "lucide-react";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,6 +18,25 @@ export async function generateStaticParams() {
     slug: product.slug,
   }));
 }
+
+const certificateImages: Record<string, { name: string; image: string }> = {
+  COA: {
+    name: "Certificate of Analysis",
+    image: "/images/coa-certificate.png",
+  },
+  GMP: {
+    name: "Good Manufacturing Practice",
+    image: "/images/gmp-certificate.jpg",
+  },
+  ISO: {
+    name: "International Organization for Standardization",
+    image: "/images/iso.avif",
+  },
+  "Phytosanitary Certificate": {
+    name: "Phytosanitary Certificate",
+    image: "/images/Phytosanitary Certificate.png",
+  },
+};
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
@@ -47,6 +67,11 @@ export default async function ProductPage({ params }: Props) {
         {/* RIGHT INFO */}
         <div>
           <h1 className="text-4xl font-semibold mb-6">{product.name}</h1>
+          {product.hsCode && (
+            <p className="text-sm text-gray-600 mb-4">
+              HS Code: <span className="font-medium">{product.hsCode}</span>
+            </p>
+          )}
 
           <div className="flex items-center gap-3 mb-4">
             <span className="text-sm font-medium">Price:</span>
@@ -85,6 +110,67 @@ export default async function ProductPage({ params }: Props) {
               {para}
             </p>
           ))}
+      </section>
+
+      {/* ================= ADDITIONAL PRODUCT INFORMATION ================= */}
+      <section className="max-w-6xl mx-auto px-4 py-10">
+        <h3 className="font-semibold mb-6 text-3xl">Additional Product Information</h3>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Applications */}
+          {product.applications && (
+            <div className="border rounded-lg p-6">
+              <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <CheckCircle className="text-[#214d3b]" />
+                Applications
+              </h4>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                {product.applications.map((app, idx) => (
+                  <li key={idx}>{app}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Packaging */}
+          {product.packaging && (
+            <div className="border rounded-lg p-6">
+              <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <Package className="text-[#214d3b]" />
+                Packaging
+              </h4>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                {product.packaging.map((pack, idx) => (
+                  <li key={idx}>{pack}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Certifications */}
+          {product.certifications && (
+            <div className="border rounded-lg p-6 col-span-2">
+              <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">Certifications</h4>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {product.certifications.map((cert, idx) => (
+                  <div
+                    key={idx}
+                    className="border rounded-lg p-4 flex flex-col items-center justify-center text-center hover:shadow-md transition">
+                    <Image
+                      src={certificateImages[cert].image}
+                      alt={cert}
+                      width={80}
+                      height={80}
+                      className="object-contain mb-2"
+                    />
+                    <p className="text-sm font-medium">{certificateImages[cert].name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </section>
 
       {/* ================= RELATED PRODUCTS ================= */}

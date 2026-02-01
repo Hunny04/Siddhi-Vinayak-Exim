@@ -1,4 +1,5 @@
 "use client";
+import { products } from "@/data/products";
 import styles from "@/styles/footer.module.css";
 import Link from "next/link";
 
@@ -13,19 +14,19 @@ export default function Footer() {
               <Link href="/">HOME</Link>
             </li>
             <li>
-              <Link href="about">ABOUT US</Link>
+              <Link href="/about">ABOUT US</Link>
             </li>
             {/* <li>
               <Link href="products">PRODUCTS</Link>
             </li> */}
             <li>
-              <Link href="career">CAREER</Link>
+              <Link href="/careers">CAREER</Link>
             </li>
             <li>
-              <Link href="contact">CONTACT US</Link>
+              <Link href="/contact">CONTACT US</Link>
             </li>
             <li>
-              <Link href="certificates">CERTIFICATES</Link>
+              <Link href="/certificates">CERTIFICATES</Link>
             </li>
           </ul>
         </div>
@@ -33,18 +34,11 @@ export default function Footer() {
         <div>
           <h4>PRODUCTS</h4>
           <ul>
-            <li>
-              <Link href="/products/ashwagandha">Ashwagandha Roots</Link>
-            </li>
-            <li>
-              <Link href="/products/ashwagandha-powder">Ashwagandha Powder</Link>
-            </li>
-            <li>
-              <Link href="/products/safed-musli">Safed Musli Roots</Link>
-            </li>
-            <li>
-              <Link href="/products/safed-musli-powder">Safed Musli Powder</Link>
-            </li>
+            {products.map((product, idx) => (
+              <li key={idx}>
+                <Link href={`/products/${product.slug}`}>{product.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
