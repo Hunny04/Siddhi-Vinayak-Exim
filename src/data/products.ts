@@ -9,6 +9,7 @@ export type Product = {
   tagline: string;
   image: string;
   topView: string;
+  iconImage: string;
   inStock: boolean;
   overview: string;
   specifications: ProductSpec[];
@@ -25,6 +26,7 @@ export const products: Product[] = [
     tagline: "Premium Ayurvedic Root · Export Quality",
     image: "/images/Ashwagandha-hero.webp",
     topView: "/images/ashwagandha.png",
+    iconImage: "/images/ashwagandha-icon.png",
     inStock: true,
     overview:
       "Ashwagandha (Withania somnifera) is a premium Indian herbal root widely used in Ayurvedic and nutraceutical applications.\n\nOur Ashwagandha is carefully sourced from Neemuch, Madhya Pradesh, cleaned, and processed to maintain its natural potency and purity, making it suitable for bulk supply and international export.",
@@ -49,6 +51,7 @@ export const products: Product[] = [
     tagline: "Premium Vitality Herb · Export Grade",
     image: "/images/safed-musli.webp",
     topView: "/images/safed-musli.png",
+    iconImage: "/images/safed-musli-icon.png",
     inStock: true,
     overview:
       "Safed Musli (Chlorophytum borivilianum) is a premium Ayurvedic herb widely used in herbal, nutraceutical, and wellness products.\n\nOur Safed Musli is carefully sourced from Madhya Pradesh and Rajasthan and processed to ensure purity, consistency, and suitability for global export markets.",
@@ -74,6 +77,7 @@ export const products: Product[] = [
     tagline: "Natural Herbal Ingredient · Export Quality",
     image: "/images/aloe-vera-main.jpg",
     topView: "/images/aloe-vera.png",
+    iconImage: "/images/aloe-vera-icon.png",
     inStock: true,
     overview:
       "Aloe Vera (Aloe barbadensis Miller) is a widely used herbal ingredient known for its versatility in herbal, nutraceutical, cosmetic, and wellness applications.\n\nOur Aloe Vera is sourced from Gujarat and Rajasthan and processed under controlled conditions to maintain purity and export-grade quality.",
@@ -98,6 +102,7 @@ export const products: Product[] = [
     tagline: "Nutrient-Rich Leaf Powder · Export Grade",
     image: "/images/moringa-powder-main.jpg",
     topView: "/images/moringa-powder-topview.png",
+    iconImage: "/images/moringa-icon.png",
     inStock: true,
     overview:
       "Moringa Powder is produced from carefully dried moringa leaves and is widely used in herbal, nutraceutical, and wellness products.\n\nOur moringa powder is finely processed to retain natural nutrients and meets international export-quality standards.",
@@ -122,6 +127,7 @@ export const products: Product[] = [
     tagline: "Natural Vitamin C Rich Fruit · Export Grade",
     image: "/images/amla-main.jpg",
     topView: "/images/amla-topview.png",
+    iconImage: "/images/amla-icon.png",
     inStock: true,
     overview:
       "Amla (Emblica officinalis) is a widely used Ayurvedic fruit known for its high nutritional value and antioxidant properties.\n\nOur Amla is carefully sourced from Madhya Pradesh and Uttar Pradesh and processed to maintain natural quality, making it suitable for bulk supply and international export.",
@@ -147,6 +153,7 @@ export const products: Product[] = [
     tagline: "Premium Aromatic Spice · Export Quality",
     image: "/images/jeera-main.jpg",
     topView: "/images/jeera-topview.png",
+    iconImage: "/images/jeera-icon.png",
     inStock: true,
     overview:
       "Jeera (Cuminum cyminum) is a premium Indian spice widely used in food products, spice blends, and herbal formulations.\n\nSourced from Unjha, Gujarat—India's major spice hub—our cumin seeds are known for strong aroma, high oil content, and export-grade quality.",
@@ -172,6 +179,7 @@ export const products: Product[] = [
     tagline: "Sweet Aromatic Seeds · Export Grade",
     image: "/images/variyali-main.jpg",
     topView: "/images/fennel-topview.png",
+    iconImage: "/images/fennel-icon.png",
     inStock: true,
     overview:
       "Variyali (Foeniculum vulgare) is a premium aromatic spice widely used in food, herbal, and nutraceutical applications.\n\nSourced from Unjha, Gujarat, our fennel seeds are known for their sweet aroma, uniform size, and export-grade quality.",
@@ -197,6 +205,7 @@ export const products: Product[] = [
     tagline: "Natural Dietary Fiber · Export Quality",
     image: "/images/isabgol-main.jpg",
     topView: "/images/isabgol-topview.png",
+    iconImage: "/images/isabgol-icon.png",
     inStock: true,
     overview:
       "Isabgol (Plantago ovata) is a natural dietary fiber widely used in nutraceutical, herbal, and pharmaceutical products.\n\nOur Isabgol is processed under strict quality controls to ensure high purity, excellent swelling capacity, and export-grade standards.",
@@ -222,6 +231,7 @@ export const products: Product[] = [
     tagline: "Natural Aromatic Flower · Export Grade",
     image: "/images/rose-main.jpg",
     topView: "/images/rose-topview.png",
+    iconImage: "/images/rose-icon.png",
     inStock: true,
     overview:
       "Rose (Rosa damascena) is a premium aromatic flower widely used in herbal, nutraceutical, cosmetic, and wellness products.\n\nOur rose petals are carefully dried and processed to retain natural color, aroma, and export-grade quality.",
@@ -247,6 +257,7 @@ export const products: Product[] = [
     tagline: "Natural Blue Flower · Export Quality",
     image: "/images/butterfly-pea-main.jpg",
     topView: "/images/aparajita-topview.png",
+    iconImage: "/images/butterfly-pea-icon.png",
     inStock: true,
     overview:
       "Aparajita Flower (Clitoria ternatea) is a traditional Ayurvedic herb widely used in herbal, wellness, and nutraceutical applications.\n\nOur flowers are carefully dried and processed to retain natural color, purity, and export-grade quality.",
@@ -277,6 +288,7 @@ export const products: Product[] = [
     tagline: "Strong Aroma Spice · Export Grade",
     image: "/images/ginger-main.avif",
     topView: "/images/ginger-topview.png",
+    iconImage: "/images/ginger-icon.png",
     inStock: true,
     overview:
       "Ginger (Zingiber officinale) is a widely used spice and herbal ingredient valued for its strong aroma and natural potency.\n\nOur ginger is sourced from Kerala and North-East India and processed to meet international export-quality standards.",

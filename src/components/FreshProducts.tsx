@@ -1,23 +1,6 @@
+import { products } from "@/data/products";
 import LogoLoop from "./LogoLoop";
-
-const products = [
-  {
-    name: "Ashwagandha",
-    image: "/images/ashwagandha-icon.png",
-  },
-  {
-    name: "Ashwagandha Powder",
-    image: "/images/ashwagandha-powder-icon.png",
-  },
-  {
-    name: "Safed Musli",
-    image: "/images/safed-musli-icon.png",
-  },
-  {
-    name: "Safed Musli Powder",
-    image: "/images/safed-musli-powder-icon.png",
-  },
-];
+import Link from "next/link";
 
 export default function FreshProducts() {
   return (
@@ -39,17 +22,19 @@ export default function FreshProducts() {
             logos={products.map((item, index) => {
               return {
                 node: (
-                  <div
-                    key={index}
-                    className={`w-48 h-36 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 bg-white/10 backdrop-blur text-white hover:bg-[#f1c46b] hover:text-black hover:shadow-2xl`}>
-                    {/* IMAGE */}
-                    <div className="w-20 h-20 mb-4 flex items-center justify-center">
-                      <img src={item.image} alt={item.name} className="max-w-full max-h-full object-contain" />
-                    </div>
+                  <Link href={item.slug ? `/products/${item.slug}` : "#"} key={index}>
+                    <div
+                      key={index}
+                      className={`w-48 h-36 rounded-2xl flex flex-col items-center justify-center transition-all duration-300 bg-white/10 backdrop-blur text-white hover:bg-[#f1c46b] hover:text-black hover:shadow-2xl`}>
+                      {/* IMAGE */}
+                      <div className="w-20 h-20 mb-4 flex items-center justify-center">
+                        <img src={item.iconImage} alt={item.name} className="max-w-full max-h-full object-contain" />
+                      </div>
 
-                    {/* LABEL */}
-                    <p className={`text-sm font-faible font-medium text-center px-2 leading-snug`}>{item.name}</p>
-                  </div>
+                      {/* LABEL */}
+                      <p className={`text-sm font-faible font-medium text-center px-2 leading-snug`}>{item.name}</p>
+                    </div>
+                  </Link>
                 ),
               };
             })}
