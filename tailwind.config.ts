@@ -85,6 +85,9 @@ const config: Config = {
         faible: ["Faible", "sans-serif"],
         poppins: ["var(--font-poppins)"],
       },
+      breakpoints: {
+        xxs: "var(--breakpoint-xxs)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],

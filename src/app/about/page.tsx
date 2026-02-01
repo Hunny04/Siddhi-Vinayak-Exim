@@ -1,3 +1,5 @@
+"use client";
+import { useIsMobile } from "@/hooks/isMobile";
 import { Sprout, Leaf, Globe, ShieldCheck, Tractor } from "lucide-react";
 
 const sections = [
@@ -43,6 +45,9 @@ const sections = [
 ];
 
 export default function AboutUsOutlinedJourney() {
+  const isMobile = useIsMobile();
+  const verSmallDevice = useIsMobile(375);
+
   return (
     <section
       className="bg-[#F7F3EE]"
@@ -65,7 +70,7 @@ export default function AboutUsOutlinedJourney() {
           <h1 className="text-4xl font-semibold text-[#f1c46b] mb-18">LOGO</h1>
           <h1 className="text-4xl font-semibold text-[#46563F] mb-4">Siddhi Vinayak Exim</h1>
           <p className="text-[#f1af2c] text-2xl mb-2">Growing Quality, Delivering Trust</p>
-          <div className="w-68 h-32 rounded-r-full border-r-10 border-b-10 border-[#214d3b] absolute right-28 -bottom-12.5"></div>
+          <div className="w-68 h-32 md:block hidden rounded-r-full border-r-10 border-b-10 border-[#214d3b] absolute right-28 -bottom-12.5"></div>
         </div>
 
         {/* Timeline */}
@@ -82,7 +87,7 @@ export default function AboutUsOutlinedJourney() {
               <div key={i} className={`relative flex mb-0 w-full ${item.className ? item.className : ""}`}>
                 {/* OUTLINED CAPSULE */}
                 <div
-                  className={`relative flex items-center gap-10 border-10 border-[#214d3b] rounded-[80px] px-14 py-12 w-full`}
+                  className={`relative flex items-center gap-10 border-10 border-[#214d3b] rounded-[80px] md:px-14 px-5 md:py-12 py-5 w-full`}
                   style={{
                     borderTopLeftRadius: isLeft ? "999px" : "0px",
                     borderBottomLeftRadius: isLeft ? "999px" : "0px",
@@ -90,6 +95,7 @@ export default function AboutUsOutlinedJourney() {
                     borderBottomRightRadius: isLeft ? "0px" : "999px",
                     borderLeftWidth: isLeft ? "10px" : "0px",
                     borderRightWidth: isLeft ? "0px" : "10px",
+                    flexDirection: isLeft ? "row" : "row-reverse",
                   }}>
                   {/* Icon */}
                   <div className="shrink-0">
@@ -99,15 +105,21 @@ export default function AboutUsOutlinedJourney() {
                   </div>
 
                   {/* Text */}
-                  <div className="max-w-xl">
-                    <h3 className="text-2xl font-semibold text-[#46563F] mb-3">{item.title}</h3>
-                    <p className="text-[#6F756A] leading-relaxed">{item.text}</p>
+                  <div
+                    className="about-text-container md:static absolute"
+                    style={{
+                      left: !isMobile ? 0 : isLeft ? "unset" : "-12rem",
+                      right: !isMobile ? 0 : isLeft ? "-12rem" : "unset",
+                      textAlign: isLeft ? "left" : "right",
+                    }}>
+                    <h3 className="text-lg md:text-2xl font-semibold text-[#46563F] mb-3">{item.title}</h3>
+                    <p className="text-[#6F756A] leading-relaxed text-xs md:text-base">{item.text}</p>
                   </div>
                 </div>
               </div>
             );
           })}
-          <div className="-z-10 w-68 h-32 rounded-l-full border-l-10 border-t-10 border-[#214d3b] absolute left-80 -bottom-29.5"></div>
+          <div className="-z-10 w-68 h-32 md:block hidden rounded-l-full border-l-10 border-t-10 border-[#214d3b] absolute left-80 -bottom-29.5"></div>
         </div>
       </div>
     </section>
