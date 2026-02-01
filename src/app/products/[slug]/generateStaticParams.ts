@@ -7,5 +7,9 @@ export function generateStaticParams() {
 }
 
 export function getRelatedProducts(currentProduct: Product, limit = 4): Product[] {
-  return products.filter((i) => i.slug !== currentProduct.slug).slice(0, limit);
+  // randomly select products excluding the current one
+  return products
+    .filter((i) => i.slug !== currentProduct.slug)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, limit);
 }

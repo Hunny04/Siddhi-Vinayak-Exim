@@ -137,7 +137,7 @@ export const products: Product[] = [
 
   {
     slug: "jeera-cumin-seeds",
-    name: "Jeera (Cumin Seeds)",
+    name: "Jeera (Cumin-Seeds)",
     tagline: "Premium Aromatic Spice · Export Quality",
     image: "/images/jeera.webp",
     inStock: true,
@@ -161,7 +161,7 @@ export const products: Product[] = [
 
   {
     slug: "variyaali-fennel-seeds",
-    name: "Variyali (Fennel Seeds)",
+    name: "Variyali (Fennel-Seeds)",
     tagline: "Sweet Aromatic Seeds · Export Grade",
     image: "/images/fennel.webp",
     inStock: true,
@@ -185,7 +185,7 @@ export const products: Product[] = [
 
   {
     slug: "isabgol-psyllium-husk",
-    name: "Isabgol (Psyllium Husk)",
+    name: "Isabgol (Psyllium-Husk)",
     tagline: "Natural Dietary Fiber · Export Quality",
     image: "/images/isabgol.webp",
     inStock: true,
@@ -233,7 +233,7 @@ export const products: Product[] = [
 
   {
     slug: "aparajita-butterfly-pea",
-    name: "Aparajita Flower (Butterfly Pea)",
+    name: "Aparajita Flower (Butterfly-Pea)",
     tagline: "Natural Blue Flower · Export Quality",
     image: "/images/aparajita.webp",
     inStock: true,

@@ -40,7 +40,7 @@ export default function Example() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Siddhi Vinayak Exim</span>
-            <Image alt="Logo" src="/logo.png" height={32} width={50} className="h-14 w-auto object-contain" />
+            <Image alt="Logo" src="/logo.png" height={32} width={50} className="md:h-14 h-8 w-auto object-contain" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -104,7 +104,12 @@ export default function Example() {
       <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} direction="right">
         <DrawerContent className="sm:max-w-sm w-full! overflow-y-auto p-4 after:w-0! z-99999">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5">
+            <Link
+              href="/"
+              className="-m-1.5 p-1.5"
+              onClick={() => {
+                setMobileMenuOpen(false);
+              }}>
               <span className="sr-only">Your Company</span>
               <img alt="Logo" src="/logo.png" className="h-8 w-auto" />
             </Link>
@@ -121,7 +126,13 @@ export default function Example() {
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
-                    Product
+                    <Link
+                      href="/products"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                      }}>
+                      Products
+                    </Link>
                     <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
@@ -130,7 +141,10 @@ export default function Example() {
                         key={item.name}
                         as="a"
                         href={"/products/" + item.slug}
-                        className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-[#214d3b] hover:bg-white/5">
+                        className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-[#214d3b] hover:bg-white/5"
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                        }}>
                         {item.name}
                       </DisclosureButton>
                     ))}
@@ -139,21 +153,33 @@ export default function Example() {
 
                 <Link
                   href="/about"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
                   About
                 </Link>
                 <Link
                   href="/careers"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
-                  Career
+                  Careers
                 </Link>
                 <Link
                   href="/certificates"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
                   Certificates
                 </Link>
                 <Link
                   href="/contact"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
                   Contact
                 </Link>
@@ -161,6 +187,9 @@ export default function Example() {
               <div className="py-6">
                 <Link
                   href="/inquire"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-[#214d3b] hover:bg-white/5">
                   Inquiry
                 </Link>

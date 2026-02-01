@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type Opening = {
@@ -45,10 +46,12 @@ export default function CareersPage() {
   return (
     <main className="bg-white text-gray-800">
       {/* ================= HEADER ================= */}
-      <section className="bg-[#214d3b] text-white px-4 py-16">
+      <section className="bg-[#214d3b] text-white px-4 md:py-16 py-8">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-semibold mb-2">Careers</h1>
-          <p className="text-sm md:text-base opacity-90">Home / Careers</p>
+          <p className="text-sm md:text-base opacity-90">
+            <Link href="/">Home</Link> / Careers
+          </p>
         </div>
       </section>
 

@@ -6,7 +6,7 @@ export default function ProductsPage() {
   return (
     <main className="bg-white text-gray-800">
       {/* ================= HEADER ================= */}
-      <section className="bg-[#214d3b] text-white py-16">
+      <section className="bg-[#214d3b] text-white md:py-16 py-8">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-semibold mb-2">Our Products</h1>
           <p className="text-sm md:text-base opacity-90">Premium Herbal & Natural Products for Export</p>
@@ -14,8 +14,8 @@ export default function ProductsPage() {
       </section>
 
       {/* ================= PRODUCTS GRID ================= */}
-      <section className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <section className="max-w-7xl mx-auto md:px-4 px-2 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 gap-2">
           {products.map((product) => (
             <div key={product.slug} className="border rounded-lg overflow-hidden hover:shadow-lg transition">
               {/* IMAGE */}
@@ -30,7 +30,7 @@ export default function ProductsPage() {
               </div>
 
               {/* CONTENT */}
-              <div className="p-4 flex flex-col h-[calc(100%-224px)]">
+              <div className="md:p-4 p-2 flex flex-col h-[calc(100%-224px)]">
                 <h3 className="text-xl font-semibold mb-1">{product.name}</h3>
 
                 <p className="text-sm text-gray-600 mb-2">{product.tagline}</p>
@@ -43,7 +43,7 @@ export default function ProductsPage() {
                 <div className="flex-1"></div>
 
                 {/* ACTIONS */}
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-col md:flex-row">
                   <Link href={`/products/${product.slug}`} className="flex-1">
                     <button className="w-full border border-[#214d3b] text-[#214d3b] py-2 rounded hover:bg-[#214d3b] hover:text-white transition cursor-pointer">
                       View Details

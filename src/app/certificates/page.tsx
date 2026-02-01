@@ -27,7 +27,7 @@ export default function CertificatesPage() {
   return (
     <main className="bg-white text-gray-800">
       {/* ================= HEADER ================= */}
-      <section className="bg-[#214d3b] text-white py-16">
+      <section className="bg-[#214d3b] text-white  md:py-16 py-8">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-semibold mb-2">Our Certifications</h1>
           <p className="text-sm md:text-base opacity-90">Government Registered & Export Authorized</p>

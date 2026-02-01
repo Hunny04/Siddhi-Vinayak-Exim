@@ -52,7 +52,7 @@ export default async function ProductPage({ params }: Props) {
   return (
     <main className="bg-white text-gray-800">
       {/* ================= TOP SECTION ================= */}
-      <section className="max-w-6xl mx-auto px-4 pt-36 pb-10 grid md:grid-cols-2 gap-8">
+      <section className="max-w-6xl mx-auto px-4 md:pt-36 pt-10 pb-10 grid md:grid-cols-2 gap-8">
         {/* LEFT IMAGE */}
         <div className="border border-gray-700 rounded p-4 flex justify-center items-center relative">
           <Image
@@ -118,10 +118,10 @@ export default async function ProductPage({ params }: Props) {
       <section className="max-w-6xl mx-auto px-4 py-10">
         <h3 className="font-semibold mb-6 text-3xl">Additional Product Information</h3>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 md:gap-8 gap-5">
           {/* Applications */}
           {product.applications && (
-            <div className="border rounded-lg p-6">
+            <div className="border rounded-lg p-6 md:col-span-1 col-span-2">
               <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <CheckCircle className="text-[#214d3b]" />
                 Applications
@@ -136,7 +136,7 @@ export default async function ProductPage({ params }: Props) {
 
           {/* Packaging */}
           {product.packaging && (
-            <div className="border rounded-lg p-6">
+            <div className="border rounded-lg p-6 md:col-span-1 col-span-2">
               <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <Package className="text-[#214d3b]" />
                 Packaging
@@ -179,10 +179,10 @@ export default async function ProductPage({ params }: Props) {
       <section className="max-w-6xl mx-auto px-4 py-8">
         <h3 className="font-semibold mb-4 text-3xl">Related Products</h3>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {relatedProducts.map((item, i) => (
-            <div key={i} className="border border-gray-700 rounded p-3 text-sm">
-              <div className="h-90 bg-gray-100 mb-3 flex items-center justify-center">
+            <div key={i} className="border border-gray-700 rounded p-3 text-sm flex flex-col">
+              <div className="md:h-90 h-44 bg-gray-100 mb-3 flex items-center justify-center">
                 <Image
                   src={item.image}
                   alt={item.name}
@@ -191,10 +191,11 @@ export default async function ProductPage({ params }: Props) {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="font-medium text-xl">{item?.name}</p>
+              <p className="font-medium md:text-xl text-lg">{item?.name}</p>
+              <div className="flex-1"></div>
               {/* <p className="text-gray-600">MOQ: {ite}</p> */}
               <Link href={`/products/${item.slug}`}>
-                <button className="mt-2 bg-[#214d3b] text-white w-full py-2 text-xl rounded cursor-pointer">
+                <button className="mt-2 bg-[#214d3b] text-white w-full py-2 md:text-xl text-base rounded cursor-pointer">
                   View Product
                 </button>
               </Link>
