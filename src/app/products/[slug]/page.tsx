@@ -82,9 +82,11 @@ export default async function ProductPage({ params }: Props) {
 
           <p className="text-green-600 text-sm mb-4">● In Stock</p>
 
-          <button className="bg-[#214d3b] hover:bg-[#f1c46b] text-white px-6 py-2 text-xl font-medium mb-6 rounded transition-all duration-300">
-            <Link href="/inquire">SEND INQUIRY</Link>
-          </button>
+          <Link href={`/inquire?product=${encodeURIComponent(product.slug)}`}>
+            <button className="bg-[#214d3b] hover:bg-[#f1c46b] text-white px-6 py-2 text-xl font-medium mb-6 rounded transition-all duration-300">
+              SEND INQUIRY
+            </button>
+          </Link>
 
           {/* PRODUCT SPEC TABLE */}
           <h3 className="font-semibold mb-2 text-xl">Product Specifications</h3>

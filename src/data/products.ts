@@ -22,7 +22,7 @@ export const products: Product[] = [
     slug: "ashwagandha",
     name: "Ashwagandha",
     tagline: "Premium Ayurvedic Root · Export Quality",
-    image: "/images/ashwagandha-hero.webp",
+    image: "/images/Ashwagandha-hero.webp",
     inStock: true,
     overview:
       "Ashwagandha (Withania somnifera) is a premium Indian herbal root widely used in Ayurvedic and nutraceutical applications.\n\nOur Ashwagandha is carefully sourced from Neemuch, Madhya Pradesh, cleaned, and processed to maintain its natural potency and purity, making it suitable for bulk supply and international export.",
