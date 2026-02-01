@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function WhatsAppFloat() {
-  const phoneNumber = "919999999999"; // 👉 replace with your number
+  const phoneNumber = "917359357650";
   const message = "Hello, I would like to inquire about your products.";
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
