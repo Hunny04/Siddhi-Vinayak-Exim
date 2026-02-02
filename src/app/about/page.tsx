@@ -64,24 +64,8 @@ export default function AboutUsOutlinedJourney() {
           backdropFilter: "blur(10px)",
         }}>
         {/* Header */}
-        {/* <div className="max-w-3xl mx-auto text-center mb-10 px-4 flex flex-col items-center relative">
-          <h1 className="text-2xl md:text-4xl font-semibold text-[#46563F] mb-10 bg-[#f1c46b] w-fit px-16 py-4 rounded-full">
-            About Us
-          </h1>
-          <Image
-            alt="Logo"
-            src="/logo.png"
-            height={100}
-            width={50}
-            className="md:w-34 w-20 h-auto object-contain mb-10 md:mb-18"
-          />
-          <h1 className="text-2xl md:text-4xl font-semibold text-[#46563F] mb-4">Siddhi Vinayak Exim</h1>
-          <p className="text-[#f1af2c] text-lg md:text-2xl mb-2">Growing Quality, Delivering Trust</p>
-          <div className="w-68 h-32 md:block hidden rounded-r-full border-r-10 border-b-10 border-[#214d3b] absolute right-28 -bottom-12.5"></div>
-        </div> */}
-
         {/* ================= HEADER ================= */}
-        <section className="bg-[#214d3b] text-white px-4 md:py-16 py-8 mb-24">
+        <section className="bg-[#214d3b] text-white px-4 md:py-16 py-8 mb-0">
           <div className="max-w-5xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-semibold mb-2">About Us</h1>
             <p className="text-sm md:text-base opacity-90">
@@ -89,6 +73,12 @@ export default function AboutUsOutlinedJourney() {
             </p>
           </div>
         </section>
+        <div className="text-center mb-10 flex flex-col items-center relative">
+          <img alt="Logo" src="/hi-res-logo.png" className="md:w-80 w-40 h-auto object-contain mb-2" />
+          <h1 className="text-2xl md:text-4xl font-semibold text-[#46563F] mb-4">Siddhi Vinayak Exim</h1>
+          <p className="text-[#ffaa00] text-lg md:text-2xl mb-2">Growing Quality, Delivering Trust</p>
+          <div className="w-68 h-32 md:block hidden rounded-r-full border-r-10 border-b-10 border-[#214d3b] absolute right-112 -bottom-12.5"></div>
+        </div>
 
         {/* Timeline */}
         <div className="max-w-6xl mx-auto space-y-20 px-4 grid grid-cols-2 gap-0 relative">
