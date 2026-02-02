@@ -20,7 +20,7 @@ export default function Example() {
   useEffect(() => {
     let timer: NodeJS.Timeout | undefined;
     if (pathname === "/") {
-      timer = setTimeout(() => setShow(false), 2500);
+      timer = setTimeout(() => setShow(false), 4000);
     } else {
       setShow(false);
     }
