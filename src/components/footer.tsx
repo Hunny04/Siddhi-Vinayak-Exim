@@ -19,7 +19,7 @@ export default function Footer() {
 
       if (visitData) {
         const { timestamp } = JSON.parse(visitData);
-        
+
         // Check if the session has expired
         if (now - timestamp > expirationTime) {
           // Expired, hide and delay footer
