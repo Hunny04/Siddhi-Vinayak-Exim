@@ -142,7 +142,7 @@ export async function POST(req: Request) {
 `;
 
     await transporter.sendMail({
-      from: `"Career Application" <${process.env.EMAIL_USER}>`,
+      from: `"Career Application"`,
       to: "siddhivinayakeximtbp55@gmail.com",
       subject: `New Career Application - ${jobTitle}`,
       html,

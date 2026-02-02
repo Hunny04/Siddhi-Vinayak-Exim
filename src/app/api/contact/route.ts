@@ -88,7 +88,7 @@ export async function POST(req: Request) {
 `;
 
     await transporter.sendMail({
-      from: `"Website Contact" <${process.env.EMAIL_USER}>`,
+      from: `"Website Contact"`,
       to: "siddhivinayakeximtbp55@gmail.com",
       subject: "New Contact Inquiry - Siddhi Vinayak Exim",
       html,

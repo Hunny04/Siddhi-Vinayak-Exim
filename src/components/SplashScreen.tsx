@@ -12,13 +12,13 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
   const [show, setShow] = useState(false);
   const [exit, setExit] = useState(false);
 
-  // Check localStorage on mount to see if this is first load
+  // Check sessionStorage on mount to see if this is first load
   useEffect(() => {
-    const hasVisited = localStorage.getItem("hasVisited");
+    const hasVisited = sessionStorage.getItem("hasVisited");
 
     if (!hasVisited) {
       // First load, set the flag and show splash screen
-      localStorage.setItem("hasVisited", "true");
+      sessionStorage.setItem("hasVisited", "true");
       setShow(true);
       // Show splash screen for 5 seconds on first load
       const timer = setTimeout(() => setShow(false), 5000);

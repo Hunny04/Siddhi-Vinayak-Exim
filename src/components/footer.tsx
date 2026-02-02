@@ -7,20 +7,31 @@ import { useEffect, useState } from "react";
 
 export default function Footer() {
   const pathname = usePathname();
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
     let timer: NodeJS.Timeout | undefined;
 
     if (pathname === "/") {
-      const hasVisited = localStorage.getItem("hasVisited");
+      const visitData = sessionStorage.getItem("hasVisited");
+      const now = new Date().getTime();
+      const expirationTime = 30 * 60 * 1000; // 30 minutes
 
-      if (!hasVisited) {
-        // First load on home page, delay footer
-        timer = setTimeout(() => setShow(false), 4000);
+      if (visitData) {
+        const { timestamp } = JSON.parse(visitData);
+        
+        // Check if the session has expired
+        if (now - timestamp > expirationTime) {
+          // Expired, hide and delay footer
+          sessionStorage.removeItem("hasVisited");
+          timer = setTimeout(() => setShow(false), 4000);
+        } else {
+          // Not expired, show footer immediately
+          setShow(false);
+        }
       } else {
-        // Returning user, show footer immediately
-        setShow(false);
+        // First load on home page, hide and delay showing footer
+        timer = setTimeout(() => setShow(false), 4000);
       }
     } else {
       setShow(false);

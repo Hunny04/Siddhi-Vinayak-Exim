@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌿 Siddhi Vinayak Exim – Export Website
 
-## Getting Started
+A modern, high-performance export website built for **Siddhi Vinayak Exim**, showcasing premium herbal, agricultural, and natural products with a strong focus on **trust, speed, and conversion**.
 
-First, run the development server:
+This project combines **Next.js**, **Tailwind CSS**, **3D product visualization**, and **production-ready backend features** to deliver a world-class export business experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Live Experience
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✨ Fast-loading  
+✨ Premium UI  
+✨ Optimized 3D models  
+✨ Export-ready inquiry system
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧠 Key Features
 
-To learn more about Next.js, take a look at the following resources:
+### 🌍 Frontend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- ⚡ **Next.js App Router**
+- 🎨 **Tailwind CSS + Shadcn UI**
+- 📱 Fully responsive (Mobile → Desktop)
+- 🌐 SEO-friendly structure
+- 🧩 Modular & scalable components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🧊 3D Product Experience
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🎥 **React Three Fiber (R3F)**
+- 🌀 Smooth rotating product models
+- 🚀 GLB optimization (WebP / KTX2)
+- 🧠 Lazy loading + Suspense
+- 🎭 Splash screen while models preload
+- 🖼 Static image fallback for instant UX
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### 📩 Inquiry System (Retail + Export)
+
+- Simple & clean inquiry form
+- Auto product selection from product page
+- Country auto-detection
+- Google reCAPTCHA protection
+- Independent processes:
+  - 📊 Google Sheet logging
+  - ✉️ Email notification
+- WhatsApp redirect after submit
+- Beautiful HTML email templates
+
+---
+
+### 👨‍💼 Careers Module
+
+- Dynamic job openings
+- Resume upload support
+- Professional HR email template
+- Password-protected admin page
+- Persistent storage using JSON
+- Zero database dependency
+
+---
+
+### 🛡 Admin Features
+
+- Password-protected admin routes
+- Dynamic job management
+- Persistent data storage
+- Easy to upgrade to DB/Auth later
+
+---
+
+### 📜 Certificates Page
+
+- Government registrations display
+- Modal view (no page reload)
+- Clean & trust-building UI
+- Ready for:
+  - Udyam Certificate
+  - GST Certificate
+  - Import Export License (IEC)
+
+---
+
+## 📂 Project Structure
