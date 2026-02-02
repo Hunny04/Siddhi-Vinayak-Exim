@@ -7,19 +7,29 @@ import { useEffect, useState } from "react";
 
 export default function Footer() {
   const pathname = usePathname();
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     let timer: NodeJS.Timeout | undefined;
+
     if (pathname === "/") {
-      timer = setTimeout(() => setShow(false), 4000);
+      const hasVisited = localStorage.getItem("hasVisited");
+
+      if (!hasVisited) {
+        // First load on home page, delay footer
+        timer = setTimeout(() => setShow(false), 4000);
+      } else {
+        // Returning user, show footer immediately
+        setShow(false);
+      }
     } else {
       setShow(false);
     }
+
     return () => {
       if (timer) clearTimeout(timer);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <footer

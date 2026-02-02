@@ -9,12 +9,21 @@ const LOGO_PATH = "/logo.png";
 
 export default function LoadingScreen({ children }: { children: React.ReactNode }) {
   const [progress, setProgress] = useState(0);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [exit, setExit] = useState(false);
 
+  // Check localStorage on mount to see if this is first load
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 5000);
-    return () => clearTimeout(timer);
+    const hasVisited = localStorage.getItem("hasVisited");
+
+    if (!hasVisited) {
+      // First load, set the flag and show splash screen
+      localStorage.setItem("hasVisited", "true");
+      setShow(true);
+      // Show splash screen for 5 seconds on first load
+      const timer = setTimeout(() => setShow(false), 5000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   // Simulation of loading progress
@@ -54,7 +63,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
 
   if (show) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-[#214d3b] overflow-hidden">
+      <div className="flex items-center justify-center min-h-screen bg-[#214d3b] overflow-hidden z-9999999">
         <div className="flex flex-col items-center justify-center min-h-screen bg-[#214d3b]">
           {/* Container for the logo layers */}
           <div

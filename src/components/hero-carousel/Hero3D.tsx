@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ProductScene from "./ProductScene";
 import clsx from "clsx";
 import Image from "next/image";
+import { useIsMobile } from "@/hooks/isMobile";
 
 const products = [
   {
@@ -19,6 +20,7 @@ const products = [
 ];
 
 export default function Hero3D() {
+  const isMobile = useIsMobile();
   const [index, setIndex] = useState(0);
 
   // autoscroll products
@@ -31,17 +33,25 @@ export default function Hero3D() {
   }, []);
 
   return (
-    <section className="relative h-screen overflow-hidden bg-[#eef3f8]">
+    <section className="relative md:h-screen h-[70vh] overflow-hidden bg-[#eef3f8]">
       {/* BIG BACKGROUND TEXT */}
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center z-0  bg-[#214d3b]/80">
-        <Image src={products[index]?.bgImage} alt="ash-roots" fill className="object-cover" />
+        <Image
+          src={products[index]?.bgImage}
+          alt="ash-roots"
+          fill
+          className="object-cover"
+          style={{
+            objectPosition: index === 0 ? "left top" : "right top",
+          }}
+        />
         <div className="bg-black w-full h-full absolute inset-0 opacity-25"></div>
         <div
-          className="bg-white w-full absolute bottom-0 min-h-[35vh] px-10 py-4 lg:py-8 lg:px-36 text-[#214d3b]"
+          className="bg-white w-full absolute bottom-0 md:min-h-[35vh] min-h-[30vh] px-4 py-4 lg:py-8 lg:px-36 text-[#214d3b] md:pt-0 pt-[12vh]"
           style={{
-            textAlign: index === 0 ? "left" : "right",
+            textAlign: isMobile ? "center" : index === 0 ? "left" : "right",
           }}>
-          <h1 className="font-[Faible] text-5xl lg:text-7xl font-bold">{products[index].name}</h1>
+          <h1 className="font-[Faible] text-4xl lg:text-7xl font-bold">{products[index].name}</h1>
           <h1 className="font-[Faible] text-xl lg:text-3xl">{products[index].desc}</h1>
         </div>
       </div>
