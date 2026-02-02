@@ -49,7 +49,7 @@ const ContactUs = ({ showDetails = false }: { showDetails?: boolean }) => {
         className="flex flex-col items-center justify-center z-10 px-4 py-16 w-full"
         style={{
           paddingTop: showDetails ? "8rem" : "4rem",
-          paddingBottom: showDetails ? "12rem" : "4rem",
+          paddingBottom: showDetails ? "12rem" : "12rem",
         }}>
         {/* Company Details */}
         {showDetails && (
