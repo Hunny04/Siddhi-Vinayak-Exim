@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -12,58 +12,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Example() {
-  const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
-  const [show, setShow] = useState(true);
-
-  useEffect(() => {
-    let timer: NodeJS.Timeout | undefined;
-
-    if (pathname === "/") {
-      const visitData = sessionStorage.getItem("hasVisited");
-      const now = new Date().getTime();
-      const expirationTime = 30 * 60 * 1000; // 30 minutes
-
-      if (visitData) {
-        const { timestamp } = JSON.parse(visitData);
-
-        // Check if the session has expired
-        if (now - timestamp > expirationTime) {
-          // Expired, hide and delay header
-          sessionStorage.removeItem("hasVisited");
-          timer = setTimeout(() => setShow(false), 4000);
-        } else {
-          // Not expired, show header immediately
-          setShow(false);
-        }
-      } else {
-        // First load on home page, hide and delay showing header
-        timer = setTimeout(() => setShow(false), 4000);
-      }
-    } else {
-      setShow(false);
-    }
-
-    return () => {
-      if (timer) clearTimeout(timer);
-    };
-  }, [pathname]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header
-      id="site-header"
-      className="bg-white sticky top-0 z-50 shadow-md"
-      style={{
-        display: show ? "none" : "block",
-      }}>
+    <header id="site-header" className="bg-white sticky top-0 z-50 shadow-md">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 py-3 lg:px-8">
         <div className="flex lg:flex-1 items-center gap-2">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Siddhi Vinayak Exim</span>
             <Image alt="Logo" src="/logo.png" height={32} width={50} className="md:h-10 h-6 w-auto object-contain" />
           </Link>
-          <h1 className="text-[#214d3b] text-lg font-[poppins] mt-1.5">Siddhi Vinayak Exim</h1>
+          <Link href="/">
+            <h1 className="text-[#214d3b] text-lg font-[poppins] mt-1.5">Siddhi Vinayak Exim</h1>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button

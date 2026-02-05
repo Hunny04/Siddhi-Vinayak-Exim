@@ -1,54 +1,10 @@
-"use client";
 import { products } from "@/data/products";
 import styles from "@/styles/footer.module.css";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const pathname = usePathname();
-  const [show, setShow] = useState(true);
-
-  useEffect(() => {
-    let timer: NodeJS.Timeout | undefined;
-
-    if (pathname === "/") {
-      const visitData = sessionStorage.getItem("hasVisited");
-      const now = new Date().getTime();
-      const expirationTime = 30 * 60 * 1000; // 30 minutes
-
-      if (visitData) {
-        const { timestamp } = JSON.parse(visitData);
-
-        // Check if the session has expired
-        if (now - timestamp > expirationTime) {
-          // Expired, hide and delay footer
-          sessionStorage.removeItem("hasVisited");
-          timer = setTimeout(() => setShow(false), 4000);
-        } else {
-          // Not expired, show footer immediately
-          setShow(false);
-        }
-      } else {
-        // First load on home page, hide and delay showing footer
-        timer = setTimeout(() => setShow(false), 4000);
-      }
-    } else {
-      setShow(false);
-    }
-
-    return () => {
-      if (timer) clearTimeout(timer);
-    };
-  }, [pathname]);
-
   return (
-    <footer
-      className={styles.footer}
-      id="site-footer"
-      style={{
-        display: show ? "none" : "block",
-      }}>
+    <footer className={styles.footer} id="site-footer">
       <div className={styles.footerGrid}>
         <div>
           <h4>MENU</h4>
