@@ -21,7 +21,16 @@ export default function Example() {
         <div className="flex lg:flex-1 items-center gap-2">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Siddhi Vinayak Exim</span>
-            <Image alt="Logo" src="/logo.png" height={32} width={50} className="md:h-10 h-6 w-auto object-contain" />
+            <Image
+              alt="Logo"
+              src="/logo.png"
+              height={32}
+              width={50}
+              className="md:h-10 h-6 w-auto object-contain"
+              quality={100}
+              priority
+              unoptimized
+            />
           </Link>
           <Link href="/">
             <h1 className="text-[#214d3b] text-lg font-[poppins] mt-1.5">Siddhi Vinayak Exim</h1>
@@ -95,8 +104,10 @@ export default function Example() {
                 setMobileMenuOpen(false);
               }}>
               <span className="sr-only">Your Company</span>
-              <img alt="Logo" src="/logo.png" className="h-8 w-auto" />
+
+              <Image src="/logo.png" alt="Logo" width={120} height={32} priority quality={90} className="h-8 w-auto" />
             </Link>
+
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -182,115 +193,6 @@ export default function Example() {
           </div>
         </DrawerContent>
       </Drawer>
-      {/* <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
-        <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10"></DialogPanel>
-      </Dialog> */}
     </header>
   );
 }
-
-// "use client";
-// import React, { useEffect, useState } from "react";
-// import styles from "@/styles/Header.module.css";
-// import Link from "next/link";
-
-// const Header = () => {
-//   const [open, setOpen] = useState(false);
-//   const [openSecond, setOpenSecond] = useState(false);
-
-//   const productMap: Record<string, string[]> = {
-//     SPICES: [
-//       "CUMIN SEEDS",
-//       "CORIANDER SEEDS",
-//       "FENNEL SEEDS",
-//       "FENUGREEK SEEDS",
-//       "TURMERIC",
-//       "CHILLIES",
-//       "DILL SEEDS",
-//       "KALONJI SEEDS",
-//       "AJWAIN SEEDS",
-//     ],
-//     "OIL SEEDS": ["SESAME SEEDS", "GROUNDNUTS", "CASTOR", "MUSTARD"],
-//     HERBS: ["PSYLLIUM", "MORINGA", "TULSI", "AMLA"],
-//   };
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const header = document.getElementById("site-header");
-//       if (window.scrollY > 50) {
-//         header?.classList.add("scrolled");
-//       } else {
-//         header?.classList.remove("scrolled");
-//       }
-//     };
-//     handleScroll(); // Initial check
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <>
-//       <header id="site-header" className={styles.header}>
-//         <div className={styles.container}>
-//           <div className={styles.logo}>
-//             {/* <Link href="/">
-//               <img src="/logo.png" alt="Siddhi Vinayak Exim" />
-//             </Link> */}
-
-//             <Link href="/" className="logo-text flex gap-3">
-//               <div className="h-8 w-8 bg-white rounded-full"></div>
-//               <h1 className="text-white">Siddhi Vinayak Exim</h1>
-//               {/* <span>An ISO 22000:2005 Certified Company</span> */}
-//             </Link>
-//           </div>
-
-//           <nav className={styles.nav}>
-//             <Link href="/" onMouseEnter={() => setOpen(false)}>
-//               HOME
-//             </Link>
-//             <Link href="about" onMouseEnter={() => setOpen(false)}>
-//               ABOUT US
-//             </Link>
-//             {/* PRODUCTS BUTTON */}
-//             <div className={styles.productsContainer}>
-//               <button className={styles.productsBtn} onClick={() => setOpen(!open)} onMouseEnter={() => setOpen(true)}>
-//                 PRODUCTS
-//               </button>
-//               {open && (
-//                 <div className={`${styles.drawer} ${open ? styles.open : ""}`} onMouseLeave={() => setOpen(false)}>
-//                   <ul>
-//                     <li>
-//                       <Link href="/products/ashwagandha">Ashwagandha Root</Link>
-//                     </li>
-//                     <li>
-//                       <Link href="/products/ashwagandha-powder">Ashwagandha Powder</Link>
-//                     </li>
-//                     <li>
-//                       <Link href="/products/safed-musli">Safed Musli Root</Link>
-//                     </li>
-//                     <li>
-//                       <Link href="/products/safed-musli-powder">Safed Musli Powder</Link>
-//                     </li>
-//                   </ul>
-//                 </div>
-//               )}
-//             </div>
-//             <Link href="process" onMouseEnter={() => setOpen(false)}>
-//               PROCESS
-//             </Link>
-//             <Link href="certificates" onMouseEnter={() => setOpen(false)}>
-//               CERTIFICATES
-//             </Link>
-//             <Link href="contact" onMouseEnter={() => setOpen(false)}>
-//               CONTACT
-//             </Link>
-//           </nav>
-//         </div>
-//       </header>
-//     </>
-//   );
-// };
-
-// export default Header;

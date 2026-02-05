@@ -1,6 +1,7 @@
 "use client";
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
@@ -46,8 +47,14 @@ export default function ProjectsCarousel() {
               <CarouselItem key={index} className="pl-6 basis-[85%] sm:basis-[60%] md:basis-[45%] lg:basis-[32%]">
                 <div className="relative h-105 rounded-3xl overflow-hidden group">
                   {/* IMAGE */}
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover object-top" />
-
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 32vw"
+                    quality={80}
+                    className="object-cover object-top"
+                  />
                   {/* GRADIENT OVERLAY */}
                   <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
 

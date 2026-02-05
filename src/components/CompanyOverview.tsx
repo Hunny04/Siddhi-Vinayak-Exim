@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const AgricultureIntro = () => {
   return (
     <section className="w-full bg-white md:pt-0 pt-14 pb-20 font-poppins">
@@ -5,18 +7,26 @@ const AgricultureIntro = () => {
         {/* LEFT IMAGE AREA */}
         <div className="relative flex justify-center">
           {/* Main Big Circle */}
-          <div className="relative md:w-105! w-full md:h-105! h-full aspect-square rounded-full border-[6px] border-white overflow-hidden">
-            <img src="/images/farming-main.png" alt="Organic Farming" className="w-full h-full object-cover" />
+          <div className="relative md:w-105 w-full md:h-105 h-full aspect-square rounded-full border-[6px] border-white overflow-hidden">
+            <Image
+              src="/images/farming-main.png"
+              alt="Organic Farming"
+              fill
+              priority
+              quality={80}
+              sizes="(max-width: 768px) 100vw, 500px"
+              className="object-cover"
+            />
           </div>
 
           {/* Top Small Circle */}
-          <div className="absolute -top-6 left-10 lg:left-20! md:left-52! sm:left-28! w-36 h-36 rounded-full border-4 border-yellow-400 overflow-hidden shadow-lg">
-            <img src="/images/soil.jpg" alt="Soil" className="w-full h-full object-cover" />
+          <div className="absolute -top-6 left-10 lg:left-20 md:left-52 sm:left-28 w-36 h-36 rounded-full border-4 border-yellow-400 overflow-hidden shadow-lg">
+            <Image src="/images/soil.jpg" alt="Soil" fill quality={70} sizes="144px" className="object-cover" />
           </div>
 
           {/* Bottom Small Circle */}
-          <div className="absolute -bottom-4 right-10 lg:right-16! md:right-52! sm:right-28! w-36 h-36 rounded-full border-4 border-yellow-400 overflow-hidden shadow-lg">
-            <img src="/images/planting.jpg" alt="Planting" className="w-full h-full object-cover" />
+          <div className="absolute -bottom-4 right-10 lg:right-16 md:right-52 sm:right-28 w-36 h-36 rounded-full border-4 border-yellow-400 overflow-hidden shadow-lg">
+            <Image src="/images/planting.jpg" alt="Planting" fill quality={70} sizes="144px" className="object-cover" />
           </div>
         </div>
 

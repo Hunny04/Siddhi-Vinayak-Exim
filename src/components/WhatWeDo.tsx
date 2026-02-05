@@ -1,4 +1,5 @@
 import { getRelatedProducts } from "@/app/products/[slug]/generateStaticParams";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function WhatWeDo() {
@@ -28,7 +29,16 @@ export default function WhatWeDo() {
               <div>
                 {/* IMAGE CIRCLE */}
                 <div className="w-36 h-36 mx-auto rounded-full bg-[#f1c46b] flex items-center justify-center mb-6">
-                  <img src={item.topView} alt={item.name} className="w-24 h-24 object-contain" />
+                  <div className="relative w-24 h-24">
+                    <Image
+                      src={item.topView}
+                      alt={item.name}
+                      fill
+                      sizes="96px"
+                      quality={70}
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
 
                 {/* TITLE */}

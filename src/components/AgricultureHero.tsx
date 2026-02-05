@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AgricultureHero() {
   return (
     <section className="relative bg-white pb-0">
@@ -10,6 +12,8 @@ export default function AgricultureHero() {
           muted
           loop
           playsInline
+          preload="metadata"
+          poster="/images/farm-poster.png"
         />
 
         {/* OVERLAY */}
@@ -24,11 +28,6 @@ export default function AgricultureHero() {
             Growing <span className="text-[#f1c46b]">Quality</span>, Delivering{" "}
             <span className="text-[#f1c46b]">Trust</span>
           </h4>
-
-          {/* PLAY BUTTON */}
-          {/* <button className="mt-8 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-105 transition">
-            <span className="ml-1 text-xl">▶</span>
-          </button> */}
         </div>
       </div>
 
@@ -38,8 +37,15 @@ export default function AgricultureHero() {
           {/* CARD 1 */}
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <p className="text-center font-campuni font-bold py-4">Direct Sourcing</p>
-            <div className="relative group">
-              <img src="/images/agri1.png" alt="Direct Sourcing" className="w-full h-56 object-cover" />
+            <div className="relative group h-56">
+              <Image
+                src="/images/agri1.png"
+                alt="Direct Sourcing"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                quality={80}
+                className="object-cover"
+              />
               <div className="group-hover:opacity-100 opacity-0 flex bg-black/70 absolute inset-0 items-center justify-center transition-all duration-300">
                 <p className="text-center text-lg font-bold font-[Faible] py-4 text-white px-6">
                   No middlemen. <br />
@@ -52,8 +58,15 @@ export default function AgricultureHero() {
           {/* CARD 2 */}
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <p className="text-center font-campuni font-bold py-4">Farmer's Integrity</p>
-            <div className="relative group">
-              <img src="/images/agri3.png" alt="Farmer's Integrity" className="w-full h-56 object-cover" />
+            <div className="relative group h-56">
+              <Image
+                src="/images/agri3.png"
+                alt="Farmer's Integrity"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                quality={80}
+                className="object-cover"
+              />{" "}
               <div className="group-hover:opacity-100 opacity-0 flex bg-black/70 absolute inset-0 items-center justify-center transition-all duration-300">
                 <p className="text-center text-lg font-bold font-[Faible] py-4 text-white px-6">
                   Our reputation is built on <br /> the hard work of our ancestors. <br /> We deliver what we promise.
@@ -65,8 +78,15 @@ export default function AgricultureHero() {
           {/* CARD 3 */}
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <p className="text-center font-campuni font-bold py-4">Strict Quality Control</p>
-            <div className="relative group">
-              <img src="/images/agri2.png" alt="Strict Quality Control" className="w-full h-56 object-cover" />
+            <div className="relative group h-56">
+              <Image
+                src="/images/agri2.png"
+                alt="Strict Quality Control"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                quality={80}
+                className="object-cover"
+              />
               <div className="group-hover:opacity-100 opacity-0 flex bg-black/70 absolute inset-0 items-center justify-center transition-all duration-300">
                 <p className="text-center text-lg font-bold font-[Faible] py-4 text-white px-6">
                   Each batch is tested <br /> for moisture content <br /> and purity.

@@ -74,7 +74,16 @@ export default function AboutUsOutlinedJourney() {
           </div>
         </section>
         <div className="text-center mb-10 flex flex-col items-center relative">
-          <img alt="Logo" src="/hi-res-logo.png" className="md:w-80 w-40 h-auto object-contain mb-2" />
+          <Image
+            src="/hi-res-logo.png"
+            alt="Logo"
+            width={320}
+            height={160}
+            priority
+            quality={90}
+            unoptimized
+            className="md:w-80 w-40 h-auto object-contain mb-2"
+          />
           <h1 className="text-2xl md:text-4xl font-semibold text-[#46563F] mb-4">Siddhi Vinayak Exim</h1>
           <p className="text-[#ffaa00] text-lg md:text-2xl mb-2">Growing Quality, Delivering Trust</p>
           <div className="w-68 h-32 md:block hidden rounded-r-full border-r-10 border-b-10 border-[#214d3b] absolute right-112 -bottom-12.5"></div>
