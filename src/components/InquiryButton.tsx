@@ -1,9 +1,14 @@
 "use client";
+
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const InquiryButton = ({ productSlug }: { productSlug: string }) => {
   const router = useRouter();
-  router.prefetch(`/inquire?product=${productSlug}`);
+
+  useEffect(() => {
+    router.prefetch(`/inquire?product=${productSlug}`);
+  }, [router, productSlug]);
 
   return (
     <button
