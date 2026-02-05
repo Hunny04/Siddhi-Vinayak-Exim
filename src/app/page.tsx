@@ -1,4 +1,3 @@
-"use client";
 import AgricultureHero from "@/components/AgricultureHero";
 import CompanyOverview from "@/components/CompanyOverview";
 import ContactUs from "@/components/contact";

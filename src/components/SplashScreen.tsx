@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useGLTF } from "@react-three/drei";
 import Image from "next/image";
 
 // For this example, I'll assume it's named 'sve-logo.png'.
@@ -39,11 +38,6 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
       });
     }, 100);
     return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    useGLTF.preload("/models/ashwagandha-compress.glb");
-    useGLTF.preload("/models/safed-musli-compress.glb");
   }, []);
 
   useEffect(() => {

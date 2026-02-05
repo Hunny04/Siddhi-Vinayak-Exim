@@ -15,7 +15,7 @@ export default function WhatWeDo() {
 
           <h2 className="text-4xl md:text-5xl font-campuni font-black font-[Campuni]">
             <span className="text-[#f1c46b]">Providing Fresh </span>
-            <span className="text-[#1f2937]">Organic Food</span>
+            <span className="text-[#1f2937]">Quality Food</span>
           </h2>
         </div>
 
