@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getRelatedProducts } from "./generateStaticParams";
 import Link from "next/link";
-import { Award, CheckCircle, Hash, Package } from "lucide-react";
+import { CheckCircle, Package } from "lucide-react";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -47,8 +47,14 @@ export default async function ProductPage({ params }: Props) {
     notFound();
   }
 
+  const phoneNumber = "917359357650";
+  const message = `Hello, I would like to know more about the product: ${product.name}.`;
+
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
   // after you already have `product`
   const relatedProducts = getRelatedProducts(product);
+
   return (
     <main className="bg-white text-gray-800">
       {/* ================= TOP SECTION ================= */}
@@ -79,15 +85,17 @@ export default async function ProductPage({ params }: Props) {
 
           <div className="flex items-center gap-3 mb-4">
             <span className="text-sm font-medium">Price:</span>
-            <button className="text-sm text-[#214d3b] hover:bg-[#214d3b] hover:text-white border border-[#214d3b] px-3 py-1 rounded transition-all duration-300">
-              Get Latest Price
-            </button>
+            <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <button className="text-sm text-[#214d3b] hover:bg-[#214d3b] hover:text-white border border-[#214d3b] px-3 py-1 rounded transition-all duration-300 cursor-pointer">
+                Get Latest Price
+              </button>
+            </Link>
           </div>
 
           <p className="text-green-600 text-sm mb-4">● In Stock</p>
 
           <Link href={`/inquire?product=${encodeURIComponent(product.slug)}`}>
-            <button className="bg-[#214d3b] hover:bg-[#f1c46b] text-white px-6 py-2 text-xl font-medium mb-6 rounded transition-all duration-300">
+            <button className="bg-[#214d3b] hover:bg-[#f1c46b] text-white px-6 py-2 text-xl font-medium mb-6 rounded transition-all duration-300 cursor-pointer">
               SEND INQUIRY
             </button>
           </Link>
