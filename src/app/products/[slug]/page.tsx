@@ -53,7 +53,7 @@ export default async function ProductPage({ params }: Props) {
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   // after you already have `product`
-  const relatedProducts = getRelatedProducts(product);
+  const relatedProducts = getRelatedProducts(product, 6);
 
   return (
     <main className="bg-white text-gray-800">
@@ -193,25 +193,25 @@ export default async function ProductPage({ params }: Props) {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {relatedProducts.map((item, i) => (
-            <div key={i} className="border border-gray-700 rounded p-3 text-sm flex flex-col">
-              <div className="md:h-90 h-44 bg-gray-100 mb-3 flex items-center justify-center">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={100}
-                  height={100}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="font-medium md:text-xl text-lg">{item?.name}</p>
-              <div className="flex-1"></div>
-              {/* <p className="text-gray-600">MOQ: {ite}</p> */}
-              <Link href={`/products/${item.slug}`}>
+            <Link href={`/products/${item.slug}`}>
+              <div key={i} className="border border-gray-700 rounded p-3 text-sm flex flex-col">
+                <div className="md:h-90 h-44 bg-gray-100 mb-3 flex items-center justify-center">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="font-medium md:text-xl text-lg">{item?.name}</p>
+                <div className="flex-1"></div>
+                {/* <p className="text-gray-600">MOQ: {ite}</p> */}
                 <button className="mt-2 bg-[#214d3b] text-white w-full py-2 md:text-xl text-base rounded cursor-pointer">
                   View Product
                 </button>
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
