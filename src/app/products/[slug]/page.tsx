@@ -60,6 +60,10 @@ export default async function ProductPage({ params }: Props) {
             alt={product.name}
             width={100}
             height={100}
+            quality={100}
+            sizes="100px"
+            priority
+            unoptimized
             className="object-contain w-full h-full"
           />
         </div>

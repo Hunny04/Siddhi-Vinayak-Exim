@@ -49,7 +49,7 @@ export const products: Product[] = [
     slug: "safed-musli",
     name: "Safed Musli",
     tagline: "Premium Vitality Herb · Export Grade",
-    image: "/images/safed-musli.webp",
+    image: "/images/safed-musli-prd.png",
     topView: "/images/safed-musli.png",
     iconImage: "/images/safed-musli-icon.png",
     inStock: true,
