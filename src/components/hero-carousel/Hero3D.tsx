@@ -50,7 +50,7 @@ export default function Hero3D() {
 
                 <div className="absolute bottom-0 left-0 w-full bg-white h-2/5">
                   <div
-                    className="relative w-full h-full flex items-end md:items-start justify-center md:justify-start px-6 py-16 md:px-8 md:py-16"
+                    className="relative w-full h-full flex items-end md:items-start justify-center md:justify-start px-6 py-8 md:px-8 md:py-16"
                     style={{
                       flexDirection: index % 2 === 0 ? "row" : "row-reverse",
                     }}>
@@ -59,9 +59,9 @@ export default function Hero3D() {
                       <p className="text-xl md:text-3xl tracking-widest mt-2 font-[Faible]">{product.desc}</p>
                     </div>
                     <div
-                      className="bg-[#214d3b] p-8 rounded-full flex items-center justify-center absolute -top-28 md:-top-40 right-1/2 md:-right-40 transform translate-x-1/2 md:-translate-x-1/2 w-3xs md:w-sm lg:w-md "
+                      className="bg-[#214d3b] p-8 rounded-full flex items-center justify-center absolute -top-28 md:-top-40 right-1/2 md:-right-40 transform translate-x-1/2 md:-translate-x-1/2 w-52 md:w-sm lg:w-md "
                       style={{
-                        top: isMobile ? "-10rem" : isTab ? "-12rem" : "-13rem",
+                        top: isMobile ? "-8rem" : isTab ? "-12rem" : "-13rem",
                         right: index % 2 === 0 ? (isMobile ? "50%" : isTab ? "3rem" : "7rem") : "auto",
                         left: index % 2 === 0 ? "auto" : isMobile ? "0%" : isTab ? "3rem" : "7rem",
                         transform: isMobile ? "unset" : "translateX(50%)",
