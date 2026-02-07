@@ -45,7 +45,7 @@ export default function Footer() {
           <h4>CONTACT</h4>
           <p>Surat, Gujarat - India.</p>
           <p className={styles.email}>siddhivinayakeximtbp55@gmail.com</p>
-          <p className={styles.number}>8320708852 | 8733928558</p>
+          <p className={styles.number}>7359357650 | 8320708852 | 8733928558</p>
           <p className="mt-2 underline">
             <Link href="/inquire">Send Inquiry</Link>
           </p>

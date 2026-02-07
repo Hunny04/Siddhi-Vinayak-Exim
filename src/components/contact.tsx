@@ -57,7 +57,9 @@ const ContactUs = ({ showDetails = false }: { showDetails?: boolean }) => {
             <h1 className="text-3xl font-bold tracking-wide">Siddhi Vinayak Exim</h1>
 
             <p className="mt-3 text-sm md:text-base opacity-90">
-              📞 <span className="font-medium">8320708852</span> | <span className="font-medium">8733928558</span>
+              📞
+              <span className="font-medium">7359357650</span> | <span className="font-medium">8320708852</span> |{" "}
+              <span className="font-medium">8733928558</span>
             </p>
 
             <p className="mt-1 text-sm md:text-base opacity-90">✉️ siddhivinayakeximtbp55@gmail.com</p>
