@@ -27,7 +27,7 @@ export default function Hero3D() {
   return (
     <section className="overflow-hidden bg-[#eef3f8]">
       <Carousel
-        // plugins={[Autoplay({ delay: 3500, stopOnInteraction: false })]}
+        plugins={[Autoplay({ delay: 3500, stopOnInteraction: false })]}
         opts={{
           loop: true,
         }}>
