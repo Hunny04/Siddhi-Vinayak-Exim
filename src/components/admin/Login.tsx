@@ -3,10 +3,11 @@
 import { useState } from "react";
 
 export default function Login({ onSuccess }: { onSuccess: () => void }) {
+  const RealPassword = process.env.ADMIN_OPENINGS_PASSWORD || "Happin@123";
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    if (password === "admin123") onSuccess();
+    if (password === RealPassword) onSuccess();
     else alert("Wrong password");
   };
 
