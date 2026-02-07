@@ -59,7 +59,7 @@ export default function Hero3D() {
                       <p className="text-xl md:text-3xl tracking-widest mt-2 font-[Faible]">{product.desc}</p>
                     </div>
                     <div
-                      className="bg-[#214d3b] p-8 rounded-full flex items-center justify-center absolute -top-28 md:-top-40 right-1/2 md:-right-40 transform translate-x-1/2 md:-translate-x-1/2 w-52 md:w-sm lg:w-md "
+                      className="bg-[#214d3b] p-8 rounded-full flex items-center justify-center absolute -top-28 md:-top-40 right-1/2 md:-right-40 transform translate-x-1/2 md:-translate-x-1/2 w-52 md:w-sm lg:w-md shadow-2xl"
                       style={{
                         top: isMobile ? "-8rem" : isTab ? "-12rem" : "-13rem",
                         right: index % 2 === 0 ? (isMobile ? "50%" : isTab ? "3rem" : "7rem") : "auto",
@@ -74,7 +74,7 @@ export default function Hero3D() {
                         quality={80}
                         sizes="(max-width: 640px) 300px, (max-width: 1024px) 400px, 600px"
                         priority
-                        className="w-full object-contain rotate-360"
+                        className="w-full object-contain"
                       />
                     </div>
                   </div>
