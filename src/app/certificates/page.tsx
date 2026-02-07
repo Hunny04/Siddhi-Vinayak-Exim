@@ -1,28 +1,30 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
-const certificates = [
-  {
-    title: "Udyam Registration",
-    description: "Registered under the Ministry of Micro, Small & Medium Enterprises (MSME), Government of India.",
-    image: "/images/certificates/udyam-registration.png",
-  },
-  {
-    title: "GST Registration",
-    description: "Registered under Goods and Services Tax (GST), Government of India.",
-    image: "/images/certificates/gst.png",
-  },
-  {
-    title: "Import Export Code (IEC)",
-    description: "Authorized Import Export License issued by Directorate General of Foreign Trade (DGFT).",
-    image: "/images/certificates/import-export.png",
-  },
-];
+type Certificate = {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+};
 
 export default function CertificatesPage() {
+  const [certificates, setCertificates] = useState<Certificate[]>([]);
   const [activeCert, setActiveCert] = useState<null | (typeof certificates)[0]>(null);
+
+  // FETCH CERTIFICATES
+  useEffect(() => {
+    const fetchCertificates = async () => {
+      const { data } = await supabase.from("certificates").select("*").order("created_at", { ascending: false });
+
+      if (data) setCertificates(data);
+    };
+
+    fetchCertificates();
+  }, []);
 
   return (
     <main className="bg-white text-gray-800">

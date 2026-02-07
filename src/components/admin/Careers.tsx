@@ -1,10 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { supabase } from "@/lib/supabase";
+import { Trash2 } from "lucide-react";
+import { useEffect, useState } from "react";
+
+type Career = {
+  id: string;
+  title: string;
+};
 
 export default function Careers() {
-  const [jobs, setJobs] = useState<string[]>([]);
+  const [jobs, setJobs] = useState<Career[]>([]);
   const [title, setTitle] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  // FETCH ON LOAD
+  const fetchCareers = async () => {
+    const { data } = await supabase.from("careers").select("*").order("created_at", { ascending: false });
+
+    if (data) setJobs(data);
+  };
+
+  useEffect(() => {
+    fetchCareers();
+  }, []);
+
+  const handleSave = async () => {
+    setLoading(true);
+
+    await supabase.from("careers").insert({
+      title,
+    });
+
+    setTitle("");
+    await fetchCareers();
+    setLoading(false);
+  };
+
+  // DELETE
+  const handleDelete = async (id: string) => {
+    const confirm = window.confirm("Delete this opening?");
+    if (!confirm) return;
+
+    await supabase.from("careers").delete().eq("id", id);
+
+    setJobs((prev) => prev.filter((j) => j.id !== id));
+  };
 
   return (
     <div>
@@ -17,16 +58,22 @@ export default function Careers() {
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        <button onClick={() => setJobs([...jobs, title])} className="bg-[#214d3b] text-white px-6 py-2 rounded">
-          Add
+        <button onClick={handleSave} disabled={loading} className="bg-[#214d3b] text-white px-6 rounded cursor-pointer">
+          {loading ? "Saving..." : "Add"}
         </button>
       </div>
 
-      {jobs.map((job, i) => (
-        <div key={i} className="bg-white p-4 rounded shadow mb-3">
-          {job}
-        </div>
-      ))}
+      <div className="space-y-3">
+        {jobs.map((job) => (
+          <div key={job.id} className="bg-white border rounded-xl shadow px-6 py-4 flex justify-between items-center">
+            {job.title}
+
+            <button onClick={() => handleDelete(job.id)} className="text-red-500 text-sm cursor-pointer">
+              <Trash2 size={16} />
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

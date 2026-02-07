@@ -1,28 +1,32 @@
 "use client";
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-const projects = [
-  {
-    image: "/images/certificates/udyam-registration.png",
-    title: "Udhyam Registration",
-    tag: "Cerificate of",
-  },
-  {
-    image: "/images/certificates/gst.png",
-    title: "GST Registration",
-    tag: "Cerificate of",
-  },
-  {
-    image: "/images/certificates/import-export.png",
-    title: "Import Export License",
-    tag: "Cerificate of",
-  },
-];
+type Certificate = {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+};
 
 export default function ProjectsCarousel() {
+  const [certificates, setCertificates] = useState<Certificate[]>([]);
+
+  // FETCH CERTIFICATES
+  useEffect(() => {
+    const fetchCertificates = async () => {
+      const { data } = await supabase.from("certificates").select("*").order("created_at", { ascending: false });
+
+      if (data) setCertificates(data);
+    };
+
+    fetchCertificates();
+  }, []);
+
   return (
     <section className="bg-[#214d3b] pb-24 pt-2 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -43,13 +47,13 @@ export default function ProjectsCarousel() {
           }}
           className="w-full">
           <CarouselContent className="md:ml-6">
-            {projects.map((project, index) => (
+            {certificates.map((cert, index) => (
               <CarouselItem key={index} className="pl-6 basis-[85%] sm:basis-[60%] md:basis-[45%] lg:basis-[32%]">
                 <div className="relative h-105 rounded-3xl overflow-hidden group">
                   {/* IMAGE */}
                   <Image
-                    src={project.image}
-                    alt={project.title}
+                    src={cert.image}
+                    alt={cert.title}
                     fill
                     sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 32vw"
                     quality={80}
@@ -60,8 +64,8 @@ export default function ProjectsCarousel() {
 
                   {/* CONTENT */}
                   <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <p className="text-xs tracking-widest text-[#f1c46b] mb-2">{project.tag}</p>
-                    <h3 className="text-xl font-campuni font-bold leading-snug">{project.title}</h3>
+                    <p className="text-xs tracking-widest text-[#f1c46b] mb-2">Certificate of</p>
+                    <h3 className="text-xl font-campuni font-bold leading-snug">{cert.title}</h3>
 
                     {/* ARROW */}
                     <Link href="/certificates">

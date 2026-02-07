@@ -1,4 +1,5 @@
 "use client";
+import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -14,9 +15,13 @@ export default function CareersPage() {
   const [openings, setOpenings] = useState<Opening[]>([]);
 
   useEffect(() => {
-    fetch("/api/openings")
-      .then((res) => res.json())
-      .then(setOpenings);
+    const fetchOpenings = async () => {
+      const { data } = await supabase.from("careers").select("id,title").order("created_at", { ascending: false });
+
+      if (data) setOpenings(data);
+    };
+
+    fetchOpenings();
   }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
