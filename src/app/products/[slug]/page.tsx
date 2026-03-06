@@ -36,6 +36,14 @@ const certificateImages: Record<string, { name: string; image: string }> = {
     name: "Phytosanitary Certificate",
     image: "/images/Phytosanitary Certificate.png",
   },
+  "Lab Reports": {
+    name: "Lab Reports",
+    image: "/images/lab-tested.avif",
+  },
+  FSSAI: {
+    name: "FSSAI License",
+    image: "/images/fssai.jpg",
+  },
 };
 
 export default async function ProductPage({ params }: Props) {
@@ -166,7 +174,7 @@ export default async function ProductPage({ params }: Props) {
             <div className="border rounded-lg p-6 col-span-2">
               <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">Certifications</h4>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {product.certifications.map((cert, idx) => (
                   <div
                     key={idx}
@@ -176,6 +184,8 @@ export default async function ProductPage({ params }: Props) {
                       alt={cert}
                       width={80}
                       height={80}
+                      unoptimized
+                      quality={100}
                       className="object-contain mb-2"
                     />
                     <p className="text-sm font-medium">{certificateImages[cert].name}</p>
@@ -201,6 +211,8 @@ export default async function ProductPage({ params }: Props) {
                     alt={item.name}
                     width={100}
                     height={100}
+                    unoptimized
+                    quality={100}
                     className="w-full h-full object-cover"
                   />
                 </div>
